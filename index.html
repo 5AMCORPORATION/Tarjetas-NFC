@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NFCÉLITE — Proveedor Mayorista NFC</title>
-<meta name="description" content="Portal mayorista NFCÉLITE. Tarjetas NFC para distribuidores, agencias y negocios que buscan comprar por volumen.">
+<title>NFCÉLITE — Proveedor NFC para Emprendedores</title>
+<meta name="description" content="NFCÉLITE es proveedor de tarjetas NFC para emprendedores, revendedores, agencias y negocios. Compra desde 3 tarjetas o solicita volumen personalizado.">
 
 <style>
 :root{
@@ -400,9 +400,237 @@ footer p{color:#555;font-size:11px;margin-top:10px}
     .checkout{padding:25px}.floating-label{display:none}
 }
 </style>
+
+<style id="nfcelite-professional-effects">
+  :root{
+    --accent:#d8b36a;
+    --accent-soft:rgba(216,179,106,.18);
+    --line:rgba(255,255,255,.10);
+  }
+  html{scroll-behavior:smooth}
+  body{
+    background:
+      radial-gradient(circle at 78% 8%, rgba(216,179,106,.08), transparent 28%),
+      radial-gradient(circle at 12% 42%, rgba(255,255,255,.035), transparent 25%),
+      #050505;
+  }
+  .card,.package,.step,.trust-item,.checkout,.hero-card,.feature,.box{
+    box-shadow:
+      0 18px 55px rgba(0,0,0,.38),
+      inset 0 1px 0 rgba(255,255,255,.055);
+    transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease;
+  }
+  .card:hover,.package:hover,.step:hover,.feature:hover,.box:hover{
+    transform:translateY(-5px);
+    box-shadow:
+      0 26px 70px rgba(0,0,0,.52),
+      0 0 0 1px rgba(216,179,106,.10),
+      inset 0 1px 0 rgba(255,255,255,.07);
+  }
+  .package{
+    position:relative;
+    overflow:hidden;
+  }
+  .package::before,.card::before,.hero-card::before{
+    content:"";
+    position:absolute;
+    width:180px;height:180px;
+    top:-110px;right:-90px;
+    background:radial-gradient(circle,rgba(255,255,255,.10),transparent 68%);
+    pointer-events:none;
+  }
+  .package.recommended{
+    border-color:rgba(216,179,106,.48)!important;
+    box-shadow:0 24px 75px rgba(0,0,0,.55),0 0 34px rgba(216,179,106,.09);
+  }
+  .package.recommended::after{
+    content:"MÁS ELEGIDO";
+    position:absolute;
+    top:14px;right:14px;
+    font-size:10px;font-weight:800;letter-spacing:.13em;
+    color:#111;background:linear-gradient(135deg,#f1d89e,#b98b43);
+    padding:7px 9px;border-radius:999px;
+    box-shadow:0 8px 24px rgba(216,179,106,.18);
+  }
+  .price{
+    text-shadow:0 8px 30px rgba(255,255,255,.08);
+  }
+  .btn{
+    position:relative;
+    overflow:hidden;
+    transition:transform .25s ease, box-shadow .25s ease, filter .25s ease;
+  }
+  .btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 14px 34px rgba(0,0,0,.38);
+    filter:brightness(1.06);
+  }
+  .btn::after{
+    content:"";
+    position:absolute;inset:0;
+    transform:translateX(-120%);
+    background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.22),transparent 65%);
+    transition:transform .65s ease;
+  }
+  .btn:hover::after{transform:translateX(120%)}
+  .floating-orb{
+    position:fixed;
+    width:260px;height:260px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(216,179,106,.055),transparent 68%);
+    filter:blur(2px);
+    pointer-events:none;
+    z-index:-1;
+    animation:orbFloat 10s ease-in-out infinite;
+  }
+  .floating-orb.one{left:-100px;top:38%;animation-delay:-3s}
+  .floating-orb.two{right:-100px;bottom:8%;animation-delay:-6s}
+  @keyframes orbFloat{
+    0%,100%{transform:translate3d(0,0,0) scale(1)}
+    50%{transform:translate3d(0,-22px,0) scale(1.06)}
+  }
+  .reveal{
+    opacity:0;transform:translateY(18px);
+    animation:reveal .8s ease forwards;
+  }
+  @keyframes reveal{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  }
+</style>
+
+
+<style id="nfcelite-volume-v2">
+  .volume-cta{
+    position:relative;
+    max-width:1120px;
+    margin:80px auto 40px;
+    padding:58px 34px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:32px;
+    background:
+      radial-gradient(circle at 78% 20%, rgba(216,179,106,.12), transparent 30%),
+      linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+    box-shadow:0 30px 90px rgba(0,0,0,.48), inset 0 1px 0 rgba(255,255,255,.07);
+  }
+  .volume-cta::before{
+    content:"";
+    position:absolute;
+    inset:1px;
+    border-radius:31px;
+    background:linear-gradient(110deg,transparent 15%,rgba(255,255,255,.045) 48%,transparent 75%);
+    transform:translateX(-100%);
+    animation:volumeShine 8s ease-in-out infinite;
+    pointer-events:none;
+  }
+  @keyframes volumeShine{
+    0%,55%{transform:translateX(-100%)}
+    72%,100%{transform:translateX(100%)}
+  }
+  .volume-glow{
+    position:absolute;
+    width:330px;height:330px;
+    right:-130px;top:-180px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(216,179,106,.16),transparent 68%);
+    filter:blur(8px);
+    pointer-events:none;
+  }
+  .volume-content{position:relative;z-index:1;max-width:760px}
+  .volume-cta .eyebrow{
+    display:inline-block;
+    font-size:11px;
+    letter-spacing:.16em;
+    font-weight:800;
+    color:rgba(216,179,106,.9);
+    margin-bottom:12px;
+  }
+  .volume-cta h2{
+    margin:0 0 12px;
+    font-size:clamp(30px,5vw,54px);
+    letter-spacing:-.045em;
+  }
+  .volume-cta p{
+    margin:0;
+    max-width:650px;
+    color:rgba(255,255,255,.64);
+    line-height:1.7;
+    font-size:15px;
+  }
+  .volume-actions{
+    display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;
+  }
+  .volume-points{
+    display:flex;flex-wrap:wrap;gap:18px;
+    margin-top:22px;
+    color:rgba(255,255,255,.55);
+    font-size:12px;
+  }
+  .volume-points span{white-space:nowrap}
+  @media(max-width:640px){
+    .volume-cta{margin:55px 16px 28px;padding:40px 22px;border-radius:26px}
+    .volume-actions .btn{width:100%;text-align:center}
+    .volume-points{display:grid;gap:10px}
+  }
+</style>
+
+
+<style id="nfcelite-final-polish">
+.package-tag{font-size:9px;letter-spacing:1.5px;color:#777;font-weight:800;margin-bottom:9px}
+.package-qty{font-size:12px;color:#aaa;margin-top:4px}
+.per-card{font-size:10px;color:#666;margin-bottom:10px}
+.package.featured{box-shadow:0 30px 100px rgba(0,0,0,.62),0 0 45px rgba(255,255,255,.055),inset 0 1px rgba(255,255,255,.10)}
+.volume-pro{position:relative;overflow:hidden}
+.volume-pro::before{
+    content:"";position:absolute;width:420px;height:420px;right:-230px;top:-260px;
+    border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.11),transparent 68%);
+    filter:blur(4px);pointer-events:none;animation:volumeGlow 7s ease-in-out infinite
+}
+@keyframes volumeGlow{0%,100%{transform:scale(.9);opacity:.55}50%{transform:scale(1.15);opacity:1}}
+.volume-top{display:flex;justify-content:space-between;align-items:center;gap:20px;position:relative;z-index:1}
+.volume-kicker{font-size:9px;letter-spacing:2px;color:#777;font-weight:800}
+.volume-top h3{font-size:25px;margin-top:7px;letter-spacing:-1px}
+.volume-number{text-align:right;min-width:120px}
+.volume-number span{font-size:44px;font-weight:800;letter-spacing:-3px}
+.volume-number small{display:block;color:#666;font-size:10px;letter-spacing:1px;text-transform:uppercase}
+.volume-slider-wrap{margin-top:30px;position:relative;z-index:1}
+.volume-slider-wrap input[type=range]{height:5px;cursor:pointer}
+.range-labels{display:flex;justify-content:space-between;color:#555;font-size:9px;margin-top:9px}
+.volume-options{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;position:relative;z-index:1}
+.volume-options button{
+    min-width:58px;padding:9px 12px;border-radius:50px;
+    background:rgba(255,255,255,.035);color:#aaa;border:1px solid rgba(255,255,255,.08);
+    transition:.25s;box-shadow:inset 0 1px rgba(255,255,255,.05)
+}
+.volume-options button:hover{color:#fff;background:rgba(255,255,255,.09);transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.35)}
+.volume-bottom{
+    display:flex;align-items:center;justify-content:space-between;gap:25px;
+    margin-top:30px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);position:relative;z-index:1
+}
+.result-label{display:block;font-size:9px;letter-spacing:1.5px;color:#666}
+.volume-bottom strong{display:block;font-size:34px;letter-spacing:-1.5px;margin-top:4px}
+.volume-bottom small{display:block;color:#666;font-size:10px;margin-top:2px}
+.volume-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+.volume-note{
+    display:flex;gap:10px;align-items:flex-start;margin-top:20px;padding:13px 15px;
+    border-radius:14px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.055);
+    color:#666;font-size:11px;line-height:1.5;position:relative;z-index:1
+}
+.volume-note span{color:#fff}
+@media(max-width:700px){
+    .volume-top{align-items:flex-start}
+    .volume-number span{font-size:35px}
+    .volume-bottom{display:grid;grid-template-columns:1fr}
+    .volume-actions{justify-content:stretch}
+    .volume-actions .btn{width:100%;text-align:center}
+}
+</style>
+
 </head>
 
 <body>
+<div class="floating-orb one"></div><div class="floating-orb two"></div>
 
 <div class="country-overlay" id="countryOverlay">
     <div class="country-modal">
@@ -429,7 +657,7 @@ footer p{color:#555;font-size:11px;margin-top:10px}
     <a href="#" class="logo">NFC<span>ÉLITE</span></a>
     <div class="nav-links">
         <a href="#como">Ventajas</a>
-        <a href="#paquetes">Mayoreo</a>
+        <a href="#paquetes">Emprende con NFC</a>
         <a href="#volumen">Volumen</a>
         <a href="#pedido">Solicitar pedido</a>
     </div>
@@ -510,6 +738,7 @@ footer p{color:#555;font-size:11px;margin-top:10px}
 </section>
 
 <section id="paquetes">
+<p style="max-width:680px;margin:10px auto 0;text-align:center;color:rgba(255,255,255,.62);font-size:14px;">Desde 3 tarjetas, con precios pensados para probar el producto, comenzar a vender y reinvertir sin comprar inventario grande.</p>
     <div class="container">
         <div class="section-header">
             <div class="eyebrow">Precios de proveedor</div>
@@ -518,60 +747,122 @@ footer p{color:#555;font-size:11px;margin-top:10px}
         </div>
 
         <div class="package-grid">
-            <div class="package">
-                <h3>Mayorista 25</h3>
-                <div class="price">$1,125 <small>MXN</small></div>
-                <div class="package-description">Entrada para nuevos revendedores.</div>
-                <ul><li>25 tarjetas NFC</li><li>$45 por tarjeta</li><li>Soporte inicial</li><li>Pedido por WhatsApp</li></ul>
-                <button class="btn btn-dark" onclick="addToCart('wholesale25')">Agregar pedido</button>
-            </div>
+    <div class="package">
+        <div class="package-tag">PARA EMPEZAR</div>
+        <h3>Emprendedor</h3>
+        <div class="package-qty">3 tarjetas</div>
+        <div class="price">$650 <small>MXN</small></div>
+        <div class="per-card">$216.67 por tarjeta</div>
+        <div class="package-description">Ideal para probar el producto y comenzar a vender.</div>
+        <ul>
+            <li>3 tarjetas NFC</li>
+            <li>Precio accesible de entrada</li>
+            <li>Soporte inicial</li>
+            <li>Pedido directo</li>
+        </ul>
+        <button class="btn btn-dark" onclick="addToCart('emprendedor3')">Agregar pedido</button>
+    </div>
 
-            <div class="package featured">
-                <div class="popular">RECOMENDADO</div>
-                <h3>Mayorista 50</h3>
-                <div class="price">$2,000 <small>MXN</small></div>
-                <div class="package-description">Equilibrio entre inversión y margen.</div>
-                <ul><li>50 tarjetas NFC</li><li>$40 por tarjeta</li><li>Soporte comercial</li><li>Pedido por WhatsApp</li></ul>
-                <button class="btn btn-light" onclick="addToCart('wholesale50')">Agregar pedido</button>
-            </div>
+    <div class="package">
+        <div class="package-tag">PARA CRECER</div>
+        <h3>Emprendedor</h3>
+        <div class="package-qty">5 tarjetas</div>
+        <div class="price">$950 <small>MXN</small></div>
+        <div class="per-card">$190 por tarjeta</div>
+        <div class="package-description">Más unidades para comenzar a atender varios clientes.</div>
+        <ul>
+            <li>5 tarjetas NFC</li>
+            <li>Mejor costo por unidad</li>
+            <li>Soporte comercial</li>
+            <li>Pedido directo</li>
+        </ul>
+        <button class="btn btn-dark" onclick="addToCart('emprendedor5')">Agregar pedido</button>
+    </div>
 
-            <div class="package">
-                <h3>Mayorista 100</h3>
-                <div class="price">$3,500 <small>MXN</small></div>
-                <div class="package-description">Para operaciones que ya están vendiendo.</div>
-                <ul><li>100 tarjetas NFC</li><li>$35 por tarjeta</li><li>Precio preferente</li><li>Soporte prioritario</li></ul>
-                <button class="btn btn-dark" onclick="addToCart('wholesale100')">Agregar pedido</button>
-            </div>
+    <div class="package featured">
+        <div class="popular">MÁS ELEGIDO</div>
+        <div class="package-tag">MEJOR EQUILIBRIO</div>
+        <h3>Crecimiento</h3>
+        <div class="package-qty">10 tarjetas</div>
+        <div class="price">$1,650 <small>MXN</small></div>
+        <div class="per-card">$165 por tarjeta</div>
+        <div class="package-description">Pensado para quienes ya quieren empezar a escalar.</div>
+        <ul>
+            <li>10 tarjetas NFC</li>
+            <li>Precio preferente</li>
+            <li>Soporte prioritario</li>
+            <li>Ideal para reventa</li>
+        </ul>
+        <button class="btn btn-light" onclick="addToCart('crecimiento10')">Agregar pedido</button>
+    </div>
 
-            <div class="package">
-                <h3>Distribuidor 250</h3>
-                <div class="price">$7,500 <small>MXN</small></div>
-                <div class="package-description">Volumen para distribuidores establecidos.</div>
-                <ul><li>250 tarjetas NFC</li><li>$30 por tarjeta</li><li>Precio distribuidor</li><li>Cotización personalizada</li></ul>
-                <button class="btn btn-dark" onclick="addToCart('wholesale250')">Agregar pedido</button>
-            </div>
-        </div>
+    <div class="package">
+        <div class="package-tag">PARA NEGOCIO</div>
+        <h3>Negocio</h3>
+        <div class="package-qty">15 tarjetas</div>
+        <div class="price">$2,250 <small>MXN</small></div>
+        <div class="per-card">$150 por tarjeta</div>
+        <div class="package-description">Mayor volumen para comenzar una operación de reventa.</div>
+        <ul>
+            <li>15 tarjetas NFC</li>
+            <li>Mejor costo por tarjeta</li>
+            <li>Soporte prioritario</li>
+            <li>Atención directa</li>
+        </ul>
+        <button class="btn btn-dark" onclick="addToCart('negocio15')">Agregar pedido</button>
+    </div>
+</div>
     </div>
 </section>
 
 <section id="volumen">
     <div class="container">
         <div class="section-header">
-            <div class="eyebrow">Calculadora</div>
+            <div class="eyebrow">Volumen personalizado</div>
             <h2>¿Necesitas más volumen?</h2>
-            <p>Usa la calculadora como referencia para mostrar un precio estimado por cantidad. Ajusta la tabla de precios a tu estructura real.</p>
+            <p>Elige la cantidad que necesitas. Si tu pedido supera los paquetes publicados, calculamos un precio de referencia y puedes solicitar una cotización directa.</p>
         </div>
 
-        <div class="volume-box">
-            <div class="volume-grid">
-                <div class="range-wrap">
-                    <label><span>Cantidad de tarjetas</span><strong id="volumeValue">100</strong></label>
-                    <input id="volumeRange" type="range" min="25" max="1000" step="25" value="100" oninput="updateVolume()">
+        <div class="volume-box volume-pro">
+            <div class="volume-top">
+                <div>
+                    <span class="volume-kicker">SELECCIONA TU CANTIDAD</span>
+                    <h3>Compra exactamente lo que necesitas.</h3>
                 </div>
-                <div class="volume-result">
-                    <span>Estimado de proveedor</span>
-                    <strong id="volumePrice">$3,500 MXN</strong>
+                <div class="volume-number"><span id="volumeValue">20</span><small>tarjetas</small></div>
+            </div>
+
+            <div class="volume-slider-wrap">
+                <input id="volumeRange" type="range" min="3" max="500" step="1" value="20" oninput="updateVolume()">
+                <div class="range-labels"><span>3</span><span>50</span><span>100</span><span>250</span><span>500+</span></div>
+            </div>
+
+            <div class="volume-options">
+                <button onclick="setVolume(3)">3</button>
+                <button onclick="setVolume(5)">5</button>
+                <button onclick="setVolume(10)">10</button>
+                <button onclick="setVolume(15)">15</button>
+                <button onclick="setVolume(25)">25</button>
+                <button onclick="setVolume(50)">50</button>
+                <button onclick="setVolume(100)">100</button>
+                <button onclick="setVolume(250)">250</button>
+            </div>
+
+            <div class="volume-bottom">
+                <div>
+                    <span class="result-label">PRECIO ESTIMADO</span>
+                    <strong id="volumePrice">$900 MXN</strong>
+                    <small id="volumeUnit">≈ $45 por tarjeta</small>
                 </div>
+                <div class="volume-actions">
+                    <button class="btn btn-light" onclick="requestCustomVolume()">Solicitar este volumen →</button>
+                    <a class="btn btn-dark" target="_blank" href="https://wa.me/525652092860?text=Hola%20NFC%C3%89LITE%2C%20quiero%20cotizar%20un%20pedido%20por%20volumen.">Cotizar por WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="volume-note">
+                <span>✓</span>
+                <p>Para pedidos grandes podemos ofrecer condiciones especiales según cantidad, programación, personalización y envío.</p>
             </div>
         </div>
     </div>
@@ -658,10 +949,10 @@ footer p{color:#555;font-size:11px;margin-top:10px}
 const WHATSAPP="525652092860";
 
 const PRODUCTS={
-    wholesale25:{name:"Mayorista 25",cards:25,price:1125},
-    wholesale50:{name:"Mayorista 50",cards:50,price:2000},
-    wholesale100:{name:"Mayorista 100",cards:100,price:3500},
-    wholesale250:{name:"Distribuidor 250",cards:250,price:7500}
+    emprendedor3:{name:"Emprendedor · 3 tarjetas",cards:3,price:650},
+    emprendedor5:{name:"Emprendedor · 5 tarjetas",cards:5,price:950},
+    crecimiento10:{name:"Crecimiento · 10 tarjetas",cards:10,price:1650},
+    negocio15:{name:"Negocio · 15 tarjetas",cards:15,price:2250}
 };
 
 const SHIPPING_RATES={
@@ -742,11 +1033,42 @@ function updateCheckout(){
 
 /* CALCULADORA DE VOLUMEN */
 function priceForQuantity(q){
-    if(q>=500)return q*27;
+    // Los paquetes publicados son el precio de referencia principal.
+    // Para cantidades personalizadas se usa una tabla escalonada de referencia.
+    if(q===3)return 650;
+    if(q===5)return 950;
+    if(q===10)return 1650;
+    if(q===15)return 2250;
     if(q>=250)return q*30;
     if(q>=100)return q*35;
     if(q>=50)return q*40;
-    return q*45;
+    if(q>=25)return q*43;
+    return Math.round(q*45);
+}
+function setVolume(q){
+    const range=document.getElementById("volumeRange");
+    range.value=q;
+    updateVolume();
+}
+function updateVolume(){
+    const q=Number(document.getElementById("volumeRange").value);
+    const price=priceForQuantity(q);
+    document.getElementById("volumeValue").innerText=q.toLocaleString("es-MX");
+    document.getElementById("volumePrice").innerText="$"+price.toLocaleString("es-MX")+" MXN";
+    document.getElementById("volumeUnit").innerText="≈ $"+Math.round(price/q).toLocaleString("es-MX")+" por tarjeta";
+}
+function requestCustomVolume(){
+    const q=Number(document.getElementById("volumeRange").value);
+    const price=priceForQuantity(q);
+    const msg=`Hola NFCÉLITE 👋
+
+Quiero solicitar una cotización por volumen.
+
+Cantidad: ${q} tarjetas
+Precio de referencia: $${price.toLocaleString("es-MX")} MXN
+
+Quiero confirmar disponibilidad, precio final, programación/personalización y envío.`;
+    window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(msg),"_blank");
 }
 function updateVolume(){
     const q=Number(document.getElementById("volumeRange").value);
@@ -866,6 +1188,62 @@ window.addEventListener("DOMContentLoaded",()=>{
         document.getElementById("countryOverlay").classList.add("hidden");
     }
     updateCheckout();
+});
+
+const products = {
+  emprendedor3:  {name:"Emprendedor · 3 tarjetas",  qty:3,  price:650},
+  crecimiento5: {name:"Crecimiento · 5 tarjetas",  qty:5,  price:950},
+  negocio10:     {name:"Negocio · 10 tarjetas",     qty:10, price:1650},
+  profesional15: {name:"Profesional · 15 tarjetas", qty:15, price:2250}
+};
+
+</script>
+
+
+<style id="nfcelite-estimator">
+  .resale-estimator{
+    max-width:1120px;margin:24px auto 10px;padding:20px;
+    display:grid;grid-template-columns:1.5fr .8fr .7fr;gap:18px;align-items:center;
+    border:1px solid rgba(255,255,255,.08);border-radius:22px;
+    background:rgba(255,255,255,.025);
+    box-shadow:0 18px 55px rgba(0,0,0,.28);
+  }
+  .estimator-label{display:block;font-size:10px;letter-spacing:.14em;color:rgba(216,179,106,.85);font-weight:800;margin-bottom:6px}
+  .resale-estimator strong{display:block;font-size:17px}
+  .resale-estimator small{display:block;color:rgba(255,255,255,.48);margin-top:4px;font-size:11px}
+  .resale-estimator label{font-size:10px;color:rgba(255,255,255,.5)}
+  .money-input{display:flex;align-items:center;margin-top:7px;border:1px solid rgba(255,255,255,.1);border-radius:12px;background:#0b0b0b;overflow:hidden}
+  .money-input span{padding-left:12px;color:rgba(255,255,255,.5)}
+  .money-input input{width:100%;border:0;outline:0;background:transparent;color:#fff;padding:11px 10px;font:inherit}
+  .estimator-result{padding:13px 15px;border-radius:15px;background:rgba(216,179,106,.07);border:1px solid rgba(216,179,106,.14)}
+  .estimator-result span,.estimator-result small{font-size:10px}
+  .estimator-result strong{font-size:24px;margin-top:2px}
+  @media(max-width:760px){.resale-estimator{grid-template-columns:1fr;margin:20px 16px}.estimator-result{display:flex;align-items:center;gap:10px;flex-wrap:wrap}}
+</style>
+<script>
+(function(){
+  const input=document.getElementById('resalePrice');
+  const out=document.getElementById('resaleProfit');
+  if(!input || !out) return;
+  function update(){
+    const sale=Math.max(0,Number(input.value)||0);
+    // Uses the $650 3-card package as the example cost.
+    const profit=(sale*3)-650;
+    out.textContent='$'+Math.max(0,profit).toLocaleString('es-MX');
+  }
+  input.addEventListener('input',update); update();
+})();
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+  document.querySelectorAll(".package,.how-card,.business-box,.volume-box").forEach((el,i)=>{
+    el.style.opacity="0";
+    el.style.transform="translateY(16px)";
+    el.style.transition="opacity .65s ease, transform .65s cubic-bezier(.2,.8,.2,1)";
+    setTimeout(()=>{el.style.opacity="1";el.style.transform="none"},120+i*70);
+  });
 });
 </script>
 
