@@ -3,2839 +3,492 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>NFCÉLITE — Tarjetas NFC para Google Reviews</title>
-
-<meta name="description"
-content="Tarjetas NFC premium para conseguir más reseñas de Google. Diseño elegante, tecnología NFC y soluciones para negocios.">
-
+<meta name="theme-color" content="#050505">
+<meta name="description" content="NFCÉLITE — tarjetas NFC para reseñas de Google y soluciones para emprendedores y proveedores.">
+<title>NFCÉLITE™️ — Convierte una tarjeta en una oportunidad</title>
 <style>
-
-/* =========================================================
-   NFCÉLITE
-   APPLE / PREMIUM DESIGN SYSTEM
-========================================================= */
-
 :root{
-    --black:#050505;
-    --black2:#0a0a0a;
-    --white:#f5f5f7;
-    --gray:#86868b;
-    --gray2:#b8b8bd;
-    --silver:#d2d2d7;
-    --line:rgba(255,255,255,.11);
-    --glass:rgba(255,255,255,.055);
-    --blue:#e7e9ed;
-    --success:#32d74b;
-
-    --radius:24px;
-    --shadow:0 30px 90px rgba(0,0,0,.55);
+  --bg:#050505;--bg2:#090909;--panel:#0d0d0f;--panel2:#121214;
+  --white:#f5f5f7;--muted:#a1a1a6;--dim:#737379;--line:rgba(255,255,255,.10);
+  --line2:rgba(255,255,255,.17);--silver:#d8d8dc;--green:#8fb99a;
+  --shadow:0 30px 100px rgba(0,0,0,.55);--r:28px;
 }
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{
-    background:
-        radial-gradient(circle at 50% -10%,rgba(255,255,255,.12),transparent 32%),
-        var(--black);
-    color:var(--white);
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "SF Pro Display",
-        "SF Pro Text",
-        "Helvetica Neue",
-        Arial,
-        sans-serif;
-    overflow-x:hidden;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--white);background:
+  radial-gradient(circle at 80% 8%,rgba(255,255,255,.07),transparent 24%),
+  radial-gradient(circle at 5% 42%,rgba(130,150,145,.045),transparent 25%),var(--bg);
+  line-height:1.5;overflow-x:hidden
 }
-
-body::before{
-    content:"";
-    position:fixed;
-    width:650px;
-    height:650px;
-    left:50%;
-    top:-400px;
-    transform:translateX(-50%);
-    background:radial-gradient(circle,rgba(255,255,255,.08),transparent 68%);
-    pointer-events:none;
-    z-index:-1;
-}
-
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-button,
-input,
-select,
-textarea{
-    font:inherit;
-}
-
-button{
-    cursor:pointer;
-}
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
+body.lock{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.container{width:min(1180px,92%);margin:auto}
 .nav{
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    z-index:2000;
-
-    height:68px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:0 5%;
-
-    background:rgba(5,5,5,.72);
-    backdrop-filter:blur(24px);
-    -webkit-backdrop-filter:blur(24px);
-
-    border-bottom:1px solid rgba(255,255,255,.08);
+  position:sticky;top:0;z-index:80;background:rgba(5,5,5,.70);
+  backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.07)
+}
+.navin{height:74px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:21px;font-weight:750;letter-spacing:-.045em}.logo span{color:#8d8d92;font-size:10px;vertical-align:top;margin-left:2px}
+.navlinks{display:flex;gap:28px;color:#b8b8bd;font-size:13px}.navlinks a:hover{color:#fff}
+.navActions{display:flex;gap:9px;align-items:center}
+.navBtn,.primary,.secondary{
+  border:1px solid var(--line);border-radius:999px;padding:11px 17px;transition:.25s
+}
+.navBtn{background:#fff;color:#050505;font-weight:700}.navBtn:hover,.primary:hover{transform:translateY(-2px);box-shadow:0 15px 40px rgba(255,255,255,.12)}
+.primary{background:#fff;color:#050505;font-weight:700}.secondary{background:rgba(255,255,255,.055);color:#fff}
+.cartCount{display:inline-grid;place-items:center;min-width:21px;height:21px;padding:0 5px;border-radius:50%;background:#111;color:#fff;font-size:11px;margin-left:5px}
+.hero{min-height:760px;display:grid;grid-template-columns:1fr .9fr;align-items:center;gap:70px;padding:85px 0 65px}
+.eyebrow{text-transform:uppercase;letter-spacing:.20em;font-size:10px;color:#8d8d93;margin-bottom:19px}
+h1{font-size:clamp(50px,7vw,88px);line-height:.92;letter-spacing:-.068em;max-width:700px}
+.gradient{background:linear-gradient(180deg,#fff 15%,#9d9da3 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:18px;color:#a6a6ac;max-width:610px;margin:26px 0 31px}
+.actions{display:flex;gap:11px;flex-wrap:wrap}
+.micro{display:flex;gap:20px;flex-wrap:wrap;color:#7e7e84;font-size:11px;margin-top:24px}
+.heroVisual{position:relative;max-width:570px;width:100%;margin:auto}
+.heroCard{position:relative;aspect-ratio:4/5;border-radius:34px;overflow:hidden;border:1px solid var(--line2);box-shadow:0 50px 120px rgba(0,0,0,.78),0 0 70px rgba(255,255,255,.045);transform:rotate(1.1deg)}
+.heroCard img{width:100%;height:100%;object-fit:cover;filter:saturate(.72) contrast(1.07) brightness(.86)}
+.heroCard:before{content:"";position:absolute;inset:0;background:linear-gradient(125deg,rgba(255,255,255,.24),transparent 26%,transparent 70%,rgba(255,255,255,.08));z-index:2;pointer-events:none}
+.heroCard:after{content:"";position:absolute;inset:-40%;background:linear-gradient(100deg,transparent 43%,rgba(255,255,255,.15) 49%,transparent 55%);transform:rotate(-10deg);animation:sweep 7s infinite;z-index:3;pointer-events:none}
+@keyframes sweep{0%,62%{transform:translateX(-30%) rotate(-10deg);opacity:0}70%{opacity:.7}84%,100%{transform:translateX(35%) rotate(-10deg);opacity:0}}
+.floating{position:absolute;right:-22px;bottom:30px;background:rgba(13,13,15,.76);backdrop-filter:blur(22px);border:1px solid var(--line);padding:17px 19px;border-radius:18px;box-shadow:var(--shadow);font-size:12px}
+.floating strong{display:block;font-size:17px;margin-bottom:2px}
+.section{padding:105px 0}
+.sectionHead{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:43px}
+.sectionHead h2{font-size:clamp(37px,5vw,60px);line-height:.96;letter-spacing:-.058em}
+.sectionHead p{max-width:500px;color:#94949a;font-size:14px}
+.infoGrid,.steps,.pricing{display:grid;gap:17px}
+.infoGrid{grid-template-columns:repeat(3,1fr)}
+.infoCard,.step,.priceCard,.builder,.checkout,.faqItem{
+  background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));
+  border:1px solid var(--line);border-radius:var(--r);box-shadow:0 20px 70px rgba(0,0,0,.22)
+}
+.infoCard{padding:30px;min-height:225px}.num{font-size:10px;color:#69696f;letter-spacing:.16em;margin-bottom:45px}.infoCard h3{font-size:22px;margin-bottom:8px}.infoCard p{color:#939399;font-size:13px}
+.gallery{display:grid;grid-template-columns:1.25fr .75fr .75fr;grid-auto-rows:270px;gap:14px}
+.gitem{position:relative;overflow:hidden;border-radius:25px;border:1px solid var(--line);background:#111}
+.gitem:first-child{grid-row:span 2}.gitem img{width:100%;height:100%;object-fit:cover;transition:.6s;filter:saturate(.78) contrast(1.06) brightness(.88)}
+.gitem:hover img{transform:scale(1.045);filter:saturate(.98) contrast(1.08) brightness(.96)}
+.gitem:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(0,0,0,.42));pointer-events:none}
+.pricing{grid-template-columns:repeat(3,1fr)}
+.priceCard{padding:29px;position:relative;transition:.3s}.priceCard:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.20)}
+.featured{border-color:rgba(255,255,255,.28);box-shadow:0 35px 90px rgba(255,255,255,.055)}
+.badge{position:absolute;top:17px;right:17px;background:#fff;color:#000;border-radius:999px;padding:6px 9px;font-size:9px;text-transform:uppercase;letter-spacing:.12em}
+.priceCard h3{font-size:21px}.price{font-size:43px;font-weight:750;letter-spacing:-.055em;margin:17px 0 2px}.price small{font-size:12px;color:#85858b;font-weight:400}
+.desc{color:#929298;font-size:13px;min-height:41px}.priceCard ul{list-style:none;display:grid;gap:9px;margin:21px 0;color:#b5b5ba;font-size:12px}.priceCard li:before{content:"✓";margin-right:8px;color:#fff}.priceCard button{width:100%}
+.provider{display:grid;grid-template-columns:1fr 1fr;gap:18px}.providerBox{padding:37px;border:1px solid var(--line);border-radius:var(--r);background:radial-gradient(circle at 80% 0,rgba(255,255,255,.07),transparent 35%),#0b0b0d}.providerBox h3{font-size:30px;letter-spacing:-.04em;margin-bottom:10px}.providerBox p{color:#94949a;font-size:14px}.providerList{display:grid;gap:13px;margin-top:25px}.providerList div{display:flex;gap:12px;align-items:flex-start}.dot{width:7px;height:7px;border-radius:50%;background:#fff;margin-top:8px;flex:0 0 auto}.providerList span{color:#aaa;font-size:13px}
+.steps{grid-template-columns:repeat(4,1fr)}.step{padding:24px;border-left:1px solid #303034}.step b{font-size:10px;color:#6d6d73;letter-spacing:.15em}.step h3{margin:12px 0 6px}.step p{font-size:12px;color:#909096}
+.builder{padding:34px}.builderGrid{display:grid;grid-template-columns:1fr .9fr;gap:35px}.field{margin-bottom:18px}.field label{display:block;font-size:11px;color:#aaa;margin-bottom:8px}.field input,.field select,.field textarea{width:100%;padding:13px 14px;border-radius:13px;border:1px solid var(--line);background:#070708;color:#fff;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(255,255,255,.34)}
+.rangeRow{display:grid;grid-template-columns:1fr 70px;gap:14px;align-items:center}.rangeRow input{padding:0;border:0}.qtyBox{font-size:25px;font-weight:700;text-align:center}.tierHint{font-size:11px;color:#7f7f85;margin-top:7px}
+.quoteBox{background:#070708;border:1px solid var(--line);border-radius:19px;padding:22px}.quoteLine{display:flex;justify-content:space-between;gap:15px;color:#aaa;padding:8px 0;font-size:13px}.quoteTotal{display:flex;justify-content:space-between;gap:15px;border-top:1px solid var(--line);margin-top:9px;padding-top:16px;font-size:22px;font-weight:700}.quoteGreen{color:var(--green)!important}.note{font-size:10px;color:#707076;margin-top:11px;line-height:1.55}
+.deliveryGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.checkout{padding:34px}.checkoutGrid{display:grid;grid-template-columns:1.08fr .92fr;gap:35px}.summary{position:sticky;top:100px;height:max-content}
+.summaryHead{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.summaryHead h3{font-size:18px}.summaryClear{background:none;border:0;color:#777;font-size:11px}
+.summaryItem{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:12px}.summaryItem small{color:#777}.remove{background:none;border:0;color:#777;font-size:10px;padding:0;margin-top:4px}.empty{color:#777;font-size:12px}
+.payment{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.payOption{border:1px solid var(--line);border-radius:13px;padding:12px;background:#070708;font-size:12px;color:#aaa}.payOption input{accent-color:#fff}
+.countryBanner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 19px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.035);margin-bottom:18px}.countryBanner span{color:#9a9aa0;font-size:12px}.countryBanner button{background:none;border:0;color:#fff;text-decoration:underline;font-size:11px}
+.faq{display:grid;gap:10px}.faqItem{padding:0;overflow:hidden}.faqItem button{width:100%;background:none;border:0;color:#fff;text-align:left;padding:19px 21px;display:flex;justify-content:space-between;gap:20px}.faqItem .answer{display:none;padding:0 21px 20px;color:#8f8f95;font-size:13px}.faqItem.open .answer{display:block}
+footer{border-top:1px solid var(--line);padding:55px 0;color:#737379;font-size:11px}.footerIn{display:flex;justify-content:space-between;gap:20px}.wa{color:#d9d9dd}
+.toast{position:fixed;bottom:25px;left:50%;transform:translate(-50%,25px);opacity:0;pointer-events:none;background:#fff;color:#000;padding:13px 18px;border-radius:999px;z-index:200;font-size:12px;transition:.3s;box-shadow:0 15px 45px #000}.toast.show{opacity:1;transform:translate(-50%,0)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(15px);z-index:150;display:none;padding:20px;align-items:center;justify-content:center}.overlay.show{display:flex}
+.modal{width:min(520px,100%);background:#0d0d0f;border:1px solid var(--line2);border-radius:28px;padding:31px;box-shadow:0 50px 120px rgba(0,0,0,.8)}.modal h3{font-size:30px;letter-spacing:-.04em}.modal p{color:#8e8e94;font-size:13px;margin:8px 0 23px}.countryOptions{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.countryOption{padding:14px;border:1px solid var(--line);border-radius:14px;background:#070708;color:#aaa;text-align:left;transition:.2s}.countryOption:hover{border-color:#fff;color:#fff}.closeModal{margin-top:15px;background:none;border:0;color:#666;font-size:11px;width:100%}
+.drawer{position:fixed;top:0;right:0;width:min(430px,94%);height:100%;background:#0a0a0c;border-left:1px solid var(--line2);z-index:170;transform:translateX(105%);transition:.35s;box-shadow:-30px 0 100px rgba(0,0,0,.5);padding:25px;display:flex;flex-direction:column}.drawer.open{transform:translateX(0)}.drawerTop{display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;border-bottom:1px solid var(--line)}.drawerTop h3{font-size:20px}.drawerClose{background:#19191b;color:#fff;border:0;border-radius:50%;width:34px;height:34px}.drawerItems{overflow:auto;flex:1;padding:8px 0}.drawerBottom{border-top:1px solid var(--line);padding-top:17px}
+@media(max-width:940px){
+ .hero{grid-template-columns:1fr;min-height:auto;padding-top:62px}.heroVisual{max-width:620px}.navlinks{display:none}
+ .pricing,.infoGrid,.deliveryGrid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}
+ .builderGrid,.checkoutGrid,.provider{grid-template-columns:1fr}.summary{position:static}
+}
+@media(max-width:600px){
+ .hero{padding-bottom:30px}.hero p{font-size:16px}.section{padding:76px 0}.sectionHead{display:block}.sectionHead p{margin-top:18px}
+ .pricing,.infoGrid,.deliveryGrid,.steps{grid-template-columns:1fr}.gallery{grid-template-columns:1fr;grid-auto-rows:300px}.gitem:first-child{grid-row:auto}
+ .navBtn{padding:9px 12px}.builder,.checkout{padding:22px}.payment{grid-template-columns:1fr}.footerIn{flex-direction:column}
+ .floating{right:8px}.countryOptions{grid-template-columns:1fr}
 }
-
-.logo{
-    font-size:17px;
-    font-weight:700;
-    letter-spacing:3px;
-}
-
-.logo span{
-    color:#fff;
-}
-
-.nav-links{
-    display:flex;
-    gap:34px;
-    color:#9d9da2;
-    font-size:13px;
-}
-
-.nav-links a{
-    transition:.25s;
-}
-
-.nav-links a:hover{
-    color:white;
-}
-
-.cart-button{
-    border:1px solid var(--line);
-    background:rgba(255,255,255,.06);
-    color:white;
-
-    padding:9px 15px;
-    border-radius:50px;
-
-    display:flex;
-    gap:8px;
-    align-items:center;
-
-    transition:.25s;
-}
-
-.cart-button:hover{
-    background:rgba(255,255,255,.12);
-}
-
-.cart-count{
-    min-width:19px;
-    height:19px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    background:white;
-    color:black;
-
-    border-radius:50%;
-    font-size:10px;
-    font-weight:800;
-}
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero{
-    min-height:100vh;
-    max-width:1450px;
-    margin:auto;
-
-    padding:145px 6% 90px;
-
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    align-items:center;
-    gap:70px;
-}
-
-.hero-content{
-    max-width:700px;
-}
-
-.pill{
-    display:inline-flex;
-    padding:8px 14px;
-
-    border:1px solid var(--line);
-    background:rgba(255,255,255,.045);
-
-    border-radius:50px;
-
-    color:#aaa;
-    font-size:11px;
-    letter-spacing:.4px;
-
-    margin-bottom:25px;
-}
-
-.hero h1{
-    font-size:clamp(50px,7vw,92px);
-    line-height:.93;
-    letter-spacing:-5px;
-}
-
-.hero h1 span{
-    background:linear-gradient(120deg,#fff,#777);
-    -webkit-background-clip:text;
-    color:transparent;
-}
-
-.hero-description{
-    color:var(--gray);
-    font-size:18px;
-    line-height:1.65;
-    max-width:600px;
-    margin:28px 0;
-}
-
-.hero-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-.btn{
-    border:none;
-    border-radius:50px;
-
-    padding:14px 22px;
-
-    font-size:13px;
-    font-weight:600;
-
-    transition:
-        transform .25s,
-        box-shadow .25s,
-        background .25s;
-}
-
-.btn:hover{
-    transform:translateY(-2px);
-}
-
-.btn-light{
-    background:#f5f5f7;
-    color:#000;
-
-    box-shadow:0 10px 35px rgba(255,255,255,.08);
-}
-
-.btn-dark{
-    color:white;
-    background:rgba(255,255,255,.06);
-    border:1px solid var(--line);
-}
-
-.btn-dark:hover{
-    background:rgba(255,255,255,.11);
-}
-
-/* =========================================================
-   CARD VISUAL
-========================================================= */
-
-.hero-product{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    min-height:540px;
-
-    perspective:1200px;
-}
-
-.card-glow{
-    position:absolute;
-
-    width:330px;
-    height:330px;
-
-    background:white;
-    filter:blur(120px);
-    opacity:.09;
-}
-
-.nfc-card{
-    position:relative;
-
-    width:400px;
-    height:250px;
-
-    border-radius:25px;
-
-    background:
-        linear-gradient(135deg,#252525 0%,#101010 48%,#050505 100%);
-
-    border:1px solid rgba(255,255,255,.22);
-
-    box-shadow:
-        0 60px 120px rgba(0,0,0,.75),
-        inset 0 1px 1px rgba(255,255,255,.2);
-
-    transform:rotateY(-15deg) rotateZ(-5deg);
-
-    transition:.6s;
-
-    overflow:hidden;
-}
-
-.nfc-card:hover{
-    transform:rotateY(-4deg) rotateZ(-2deg) scale(1.04);
-}
-
-.nfc-card::before{
-    content:"";
-
-    position:absolute;
-    width:300px;
-    height:300px;
-
-    right:-130px;
-    bottom:-150px;
-
-    background:radial-gradient(circle,rgba(255,255,255,.14),transparent 65%);
-}
-
-.nfc-card::after{
-    content:"";
-
-    position:absolute;
-    inset:-100%;
-
-    background:linear-gradient(
-        120deg,
-        transparent 40%,
-        rgba(255,255,255,.12),
-        transparent 60%
-    );
-
-    transform:rotate(15deg);
-    animation:cardShine 6s infinite;
-}
-
-@keyframes cardShine{
-
-    0%,65%{
-        transform:translateX(-50%) rotate(15deg);
-    }
-
-    100%{
-        transform:translateX(50%) rotate(15deg);
-    }
-}
-
-.card-inner{
-    position:absolute;
-    inset:26px;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-}
-
-.card-brand{
-    font-size:14px;
-    letter-spacing:3px;
-    font-weight:700;
-}
-
-.card-google{
-    font-size:43px;
-    font-weight:700;
-    letter-spacing:-3px;
-}
-
-.stars{
-    color:#f7c948;
-    letter-spacing:4px;
-    font-size:15px;
-}
-
-.card-bottom{
-    display:flex;
-    justify-content:space-between;
-
-    color:#777;
-
-    font-size:9px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-}
-
-.nfc-icon{
-    position:absolute;
-    top:25px;
-    right:25px;
-
-    width:39px;
-    height:39px;
-
-    border:1px solid rgba(255,255,255,.4);
-    border-radius:50%;
-}
-
-.nfc-icon::before,
-.nfc-icon::after{
-    content:"";
-    position:absolute;
-
-    border:1px solid rgba(255,255,255,.55);
-    border-radius:50%;
-}
-
-.nfc-icon::before{
-    inset:8px;
-}
-
-.nfc-icon::after{
-    inset:15px;
-}
-
-/* =========================================================
-   TRUST BAR
-========================================================= */
-
-.trust{
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-
-    padding:23px 6%;
-
-    display:flex;
-    justify-content:center;
-    gap:45px;
-    flex-wrap:wrap;
-
-    color:#777;
-    font-size:11px;
-    letter-spacing:1px;
-    text-transform:uppercase;
-}
-
-/* =========================================================
-   GENERAL SECTIONS
-========================================================= */
-
-section{
-    padding:120px 6%;
-}
-
-.container{
-    max-width:1250px;
-    margin:auto;
-}
-
-.section-header{
-    max-width:720px;
-    margin-bottom:55px;
-}
-
-.eyebrow{
-    font-size:10px;
-    color:#aaa;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    margin-bottom:16px;
-}
-
-.section-header h2{
-    font-size:clamp(38px,5vw,64px);
-    line-height:1;
-    letter-spacing:-3px;
-}
-
-.section-header p{
-    margin-top:18px;
-    color:var(--gray);
-    line-height:1.7;
-}
-
-/* =========================================================
-   HOW
-========================================================= */
-
-.how-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:16px;
-}
-
-.how-card{
-    padding:34px;
-
-    min-height:250px;
-
-    border-radius:var(--radius);
-
-    background:
-        linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
-
-    border:1px solid var(--line);
-
-    transition:.35s;
-}
-
-.how-card:hover{
-    transform:translateY(-5px);
-    border-color:rgba(255,255,255,.2);
-}
-
-.number{
-    color:#777;
-    font-size:11px;
-    margin-bottom:60px;
-}
-
-.how-card h3{
-    margin-bottom:10px;
-}
-
-.how-card p{
-    color:#777;
-    font-size:14px;
-    line-height:1.6;
-}
-
-/* =========================================================
-   PACKAGES
-========================================================= */
-
-.package-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-}
-
-.package{
-    position:relative;
-
-    padding:30px;
-
-    border-radius:26px;
-
-    background:#0d0d0d;
-
-    border:1px solid var(--line);
-
-    transition:.35s;
-}
-
-.package:hover{
-    transform:translateY(-7px);
-    box-shadow:var(--shadow);
-}
-
-.package.featured{
-    border-color:rgba(255,255,255,.35);
-    background:
-        radial-gradient(circle at 90% 0%,rgba(255,255,255,.10),transparent 38%),
-        #0d0d0d;
-}
-
-.popular{
-    position:absolute;
-    top:15px;
-    right:15px;
-
-    font-size:8px;
-    letter-spacing:1px;
-
-    padding:6px 9px;
-
-    border-radius:50px;
-
-    background:white;
-    color:black;
-    font-weight:800;
-}
-
-.package h3{
-    font-size:17px;
-}
-
-.price{
-    font-size:42px;
-    font-weight:700;
-    letter-spacing:-2px;
-
-    margin:18px 0 3px;
-}
-
-.price small{
-    font-size:12px;
-    color:#666;
-}
-
-.package-description{
-    color:#777;
-    font-size:12px;
-    line-height:1.5;
-    min-height:40px;
-}
-
-.package ul{
-    list-style:none;
-    margin:24px 0;
-}
-
-.package li{
-    color:#999;
-    font-size:12px;
-    padding:9px 0;
-
-    border-bottom:1px solid rgba(255,255,255,.055);
-}
-
-.package li::before{
-    content:"✓";
-    color:white;
-    margin-right:9px;
-}
-
-.package .btn{
-    width:100%;
-}
-
-/* =========================================================
-   BUSINESS / RESELL
-========================================================= */
-
-.business-box{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-
-    padding:65px;
-
-    border-radius:35px;
-
-    background:
-        radial-gradient(circle at 85% 20%,rgba(255,255,255,.10),transparent 35%),
-        linear-gradient(145deg,#111,#080808);
-
-    border:1px solid var(--line);
-}
-
-.business-box h2{
-    font-size:45px;
-    letter-spacing:-2px;
-}
-
-.business-box p{
-    color:#777;
-    line-height:1.7;
-    margin:20px 0;
-}
-
-.resell-items{
-    display:grid;
-    gap:12px;
-}
-
-.resell-item{
-    display:flex;
-    gap:15px;
-
-    padding:18px;
-
-    border-radius:15px;
-
-    border:1px solid var(--line);
-    background:rgba(255,255,255,.025);
-}
-
-.resell-item span{
-    color:#666;
-    display:block;
-    font-size:11px;
-    margin-top:4px;
-}
-
-/* =========================================================
-   CART DRAWER
-========================================================= */
-
-.cart-overlay{
-    position:fixed;
-    inset:0;
-
-    background:rgba(0,0,0,.6);
-    backdrop-filter:blur(8px);
-
-    z-index:3000;
-
-    opacity:0;
-    pointer-events:none;
-
-    transition:.3s;
-}
-
-.cart-overlay.active{
-    opacity:1;
-    pointer-events:auto;
-}
-
-.cart{
-    position:absolute;
-    top:0;
-    right:0;
-
-    width:min(450px,100%);
-    height:100%;
-
-    background:#101010;
-
-    border-left:1px solid var(--line);
-
-    padding:30px;
-
-    transform:translateX(100%);
-
-    transition:.4s;
-
-    display:flex;
-    flex-direction:column;
-}
-
-.cart-overlay.active .cart{
-    transform:translateX(0);
-}
-
-.cart-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding-bottom:20px;
-
-    border-bottom:1px solid var(--line);
-}
-
-.close{
-    width:35px;
-    height:35px;
-
-    border-radius:50%;
-
-    border:1px solid var(--line);
-    background:rgba(255,255,255,.05);
-    color:white;
-}
-
-.cart-items{
-    flex:1;
-    overflow:auto;
-
-    padding:20px 0;
-}
-
-.cart-empty{
-    text-align:center;
-    color:#666;
-    padding:60px 10px;
-}
-
-.cart-item{
-    padding:16px 0;
-
-    display:flex;
-    justify-content:space-between;
-    gap:15px;
-
-    border-bottom:1px solid rgba(255,255,255,.07);
-}
-
-.cart-item-name{
-    font-size:14px;
-}
-
-.cart-item-price{
-    color:#aaa;
-    font-size:12px;
-    margin-top:5px;
-}
-
-.quantity{
-    display:flex;
-    align-items:center;
-    gap:8px;
-}
-
-.quantity button{
-    width:25px;
-    height:25px;
-
-    border-radius:50%;
-
-    border:1px solid var(--line);
-    background:#181818;
-    color:white;
-}
-
-.cart-summary{
-    border-top:1px solid var(--line);
-    padding-top:20px;
-}
-
-.cart-total{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:15px;
-}
-
-.cart-total strong{
-    font-size:25px;
-}
-
-/* =========================================================
-   CHECKOUT
-========================================================= */
-
-.checkout{
-    max-width:900px;
-    margin:auto;
-
-    padding:40px;
-
-    border-radius:30px;
-
-    background:#0e0e0e;
-    border:1px solid var(--line);
-}
-
-.form-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-}
-
-.field{
-    display:flex;
-    flex-direction:column;
-    gap:7px;
-    margin-bottom:13px;
-}
-
-.field.full{
-    grid-column:1/-1;
-}
-
-.field label{
-    color:#999;
-    font-size:11px;
-}
-
-.field input,
-.field select,
-.field textarea{
-    width:100%;
-
-    padding:14px;
-
-    color:white;
-    background:#080808;
-
-    border:1px solid var(--line);
-    border-radius:12px;
-
-    outline:none;
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus{
-    border-color:rgba(255,255,255,.4);
-}
-
-.field textarea{
-    min-height:100px;
-    resize:vertical;
-}
-
-.order-summary{
-    margin-top:20px;
-
-    padding:20px;
-
-    border-radius:18px;
-
-    background:rgba(255,255,255,.035);
-    border:1px solid var(--line);
-}
-
-.order-line{
-    display:flex;
-    justify-content:space-between;
-
-    color:#888;
-    font-size:13px;
-
-    padding:8px 0;
-}
-
-.order-line.total{
-    border-top:1px solid var(--line);
-    margin-top:10px;
-    padding-top:15px;
-
-    color:white;
-}
-
-.order-line.total strong{
-    font-size:23px;
-}
-
-/* =========================================================
-   COUNTRY MODAL
-========================================================= */
-
-.country-overlay{
-    position:fixed;
-    inset:0;
-
-    z-index:5000;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    padding:20px;
-
-    background:rgba(0,0,0,.82);
-    backdrop-filter:blur(20px);
-}
-
-.country-modal{
-    width:min(450px,100%);
-
-    padding:42px;
-
-    text-align:center;
-
-    border-radius:30px;
-
-    background:
-        linear-gradient(145deg,#161616,#0b0b0b);
-
-    border:1px solid var(--line);
-
-    box-shadow:0 50px 150px #000;
-}
-
-.country-modal .logo{
-    margin-bottom:30px;
-}
-
-.country-modal h2{
-    font-size:31px;
-    letter-spacing:-1px;
-}
-
-.country-modal p{
-    color:#777;
-    font-size:14px;
-    line-height:1.6;
-    margin:12px 0 25px;
-}
-
-.country-modal select{
-    width:100%;
-
-    padding:14px;
-
-    border-radius:13px;
-
-    background:#080808;
-    color:white;
-
-    border:1px solid var(--line);
-
-    margin-bottom:12px;
-}
-
-.hidden{
-    display:none!important;
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer{
-    border-top:1px solid var(--line);
-
-    padding:70px 6% 40px;
-
-    text-align:center;
-}
-
-footer p{
-    color:#555;
-    font-size:11px;
-    margin-top:10px;
-}
-
-.whatsapp{
-    position:fixed;
-
-    right:24px;
-    bottom:24px;
-
-    width:55px;
-    height:55px;
-
-    z-index:2500;
-
-    border-radius:50%;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    background:#25D366;
-    color:white;
-
-    font-size:23px;
-
-    box-shadow:0 15px 45px rgba(0,0,0,.45);
-
-    transition:.3s;
-}
-
-.whatsapp:hover{
-    transform:scale(1.08);
-}
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media(max-width:1050px){
-
-    .hero{
-        grid-template-columns:1fr;
-        text-align:center;
-    }
-
-    .hero-content{
-        margin:auto;
-    }
-
-    .hero-description{
-        margin-left:auto;
-        margin-right:auto;
-    }
-
-    .hero-actions{
-        justify-content:center;
-    }
-
-    .hero-product{
-        min-height:400px;
-    }
-
-    .package-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .how-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .business-box{
-        grid-template-columns:1fr;
-    }
-
-}
-
-@media(max-width:700px){
-
-    .nav-links{
-        display:none;
-    }
-
-    .hero{
-        padding-top:125px;
-    }
-
-    .hero h1{
-        letter-spacing:-3px;
-    }
-
-    .nfc-card{
-        width:320px;
-        height:200px;
-    }
-
-    .card-google{
-        font-size:34px;
-    }
-
-    .package-grid,
-    .how-grid{
-        grid-template-columns:1fr;
-    }
-
-    .business-box{
-        padding:32px;
-    }
-
-    .business-box h2{
-        font-size:36px;
-    }
-
-    .form-grid{
-        grid-template-columns:1fr;
-    }
-
-    .field.full{
-        grid-column:auto;
-    }
-
-    .checkout{
-        padding:25px;
-    }
-
-}
-
 </style>
 </head>
-
 <body>
-
-
-<!-- =======================================================
-     COUNTRY SELECTOR
-======================================================= -->
-
-<div class="country-overlay" id="countryOverlay">
-
-    <div class="country-modal">
-
-        <div class="logo">
-            NFC<span>ÉLITE</span>
-        </div>
-
-        <h2>Bienvenido.</h2>
-
-        <p>
-            Selecciona tu país para ofrecerte una experiencia
-            de compra y atención más adecuada.
-        </p>
-
-        <select id="countrySelect">
-
-            <option value="">Selecciona tu país</option>
-
-            <option value="México">🇲🇽 México</option>
-            <option value="Estados Unidos">🇺🇸 Estados Unidos</option>
-            <option value="Canadá">🇨🇦 Canadá</option>
-            <option value="España">🇪🇸 España</option>
-            <option value="Colombia">🇨🇴 Colombia</option>
-            <option value="Argentina">🇦🇷 Argentina</option>
-            <option value="Chile">🇨🇱 Chile</option>
-            <option value="Perú">🇵🇪 Perú</option>
-            <option value="Otro">🌎 Otro país</option>
-
-        </select>
-
-        <button
-            class="btn btn-light"
-            style="width:100%"
-            onclick="enterSite()">
-
-            Continuar
-
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- =======================================================
-     NAVIGATION
-======================================================= -->
-
-<nav class="nav">
-
-    <a href="#" class="logo">
-        NFC<span>ÉLITE</span>
-    </a>
-
-    <div class="nav-links">
-
-        <a href="#como">Cómo funciona</a>
-        <a href="#paquetes">Paquetes</a>
-        <a href="#mayoreo">Mayoreo</a>
-        <a href="#checkout">Comprar</a>
-
-    </div>
-
-    <button
-        class="cart-button"
-        onclick="openCart()">
-
-        Carrito
-
-        <span
-            class="cart-count"
-            id="cartCount">
-
-            0
-
-        </span>
-
-    </button>
-
-</nav>
-
-
-<!-- =======================================================
-     HERO
-======================================================= -->
-
-<header class="hero">
-
-    <div class="hero-content">
-
-        <div class="pill">
-            Tecnología NFC · Google Reviews
-        </div>
-
-        <h1>
-            Haz que pedir una reseña sea
-            <span>instantáneo.</span>
-        </h1>
-
-        <p class="hero-description">
-
-            Tarjetas NFC premium para restaurantes, barberías,
-            hoteles, tiendas, profesionales y negocios que quieren
-            convertir una experiencia positiva en una reseña.
-
-        </p>
-
-        <div class="hero-actions">
-
-            <a
-                href="#paquetes"
-                class="btn btn-light">
-
-                Ver paquetes →
-
-            </a>
-
-            <a
-                href="#como"
-                class="btn btn-dark">
-
-                ¿Cómo funciona?
-
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <div class="hero-product">
-
-        <div class="card-glow"></div>
-
-        <div class="nfc-card">
-
-            <div class="nfc-icon"></div>
-
-            <div class="card-inner">
-
-                <div class="card-brand">
-                    NFCÉLITE
-                </div>
-
-                <div>
-
-                    <div class="card-google">
-                        Google
-                    </div>
-
-                    <div class="stars">
-                        ★★★★★
-                    </div>
-
-                </div>
-
-                <div class="card-bottom">
-
-                    <span>
-                        Tap to review
-                    </span>
-
-                    <span>
-                        NFC
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<header class="nav">
+ <div class="container navin">
+  <a href="#inicio" class="logo">NFCÉLITE<span>™️</span></a>
+  <nav class="navlinks">
+   <a href="#como">Cómo funciona</a><a href="#paquetes">Paquetes</a><a href="#proveedor">Proveedores</a><a href="#cotizador">Cotizador</a>
+  </nav>
+  <div class="navActions">
+   <button class="navBtn" onclick="openDrawer()">Pedido <span class="cartCount" id="cartCount">0</span></button>
+  </div>
+ </div>
 </header>
 
+<main id="inicio">
+<section class="hero container">
+ <div>
+  <div class="eyebrow">NFCÉLITE™️ / SMART REVIEW SYSTEM</div>
+  <h1>Una tarjeta.<br><span class="gradient">Una experiencia.</span></h1>
+  <p>Tarjetas NFC para facilitar reseñas de Google y, al mismo tiempo, crear una oportunidad de negocio para quienes quieren venderlas a otros comercios.</p>
+  <div class="actions">
+   <a class="primary" href="#paquetes">Ver paquetes</a>
+   <a class="secondary" href="#proveedor">Quiero revender</a>
+  </div>
+  <div class="micro"><span>● Sin apps especiales</span><span>● Configuración sencilla</span><span>● Entrega CDMX + envíos</span></div>
+ </div>
+ <div class="heroVisual">
+  <div class="heroCard"><img src="assets/card-4.jpeg" alt="Tarjeta NFCÉLITE para reseñas"></div>
+  <div class="floating"><strong>NFCÉLITE™️</strong>Acerca el teléfono. Abre el enlace. Facilita la reseña.</div>
+ </div>
+</section>
 
-<!-- =======================================================
-     TRUST
-======================================================= -->
+<section class="section container" id="como">
+ <div class="sectionHead"><h2>La tecnología<br><span class="gradient">sin complicaciones.</span></h2><p>NFC permite que un teléfono compatible lea una pequeña etiqueta de proximidad. NFCÉLITE utiliza esa interacción para llevar al cliente al enlace que hayas configurado.</p></div>
+ <div class="infoGrid">
+  <article class="infoCard"><div class="num">01 / ACERCA</div><h3>Acerca tu teléfono</h3><p>El cliente acerca su smartphone a la tarjeta NFC. No necesita buscar manualmente el enlace.</p></article>
+  <article class="infoCard"><div class="num">02 / ABRE</div><h3>Se abre el enlace</h3><p>La tarjeta puede llevar al enlace de reseñas de Google que hayas definido durante la configuración.</p></article>
+  <article class="infoCard"><div class="num">03 / CONVIERTE</div><h3>Hazlo parte del negocio</h3><p>Colócala en mostrador, mesa, recepción, caja o punto de atención y crea una experiencia más directa.</p></article>
+ </div>
+</section>
 
-<div class="trust">
+<section class="section container">
+ <div class="sectionHead"><h2>El producto,<br>como realmente se ve.</h2><p>Estas imágenes corresponden a las tarjetas de referencia de NFCÉLITE. La presentación visual se mantiene limpia y premium para mostrar el producto real.</p></div>
+ <div class="gallery">
+  <div class="gitem"><img src="assets/card-1.jpeg" alt="Tarjetas NFCÉLITE en mano"></div>
+  <div class="gitem"><img src="assets/card-2.jpeg" alt="Tarjeta NFCÉLITE negra y blanca"></div>
+  <div class="gitem"><img src="assets/card-3.jpeg" alt="Tarjetas NFCÉLITE"></div>
+  <div class="gitem"><img src="assets/card-4.jpeg" alt="Tarjeta NFCÉLITE blanca"></div>
+  <div class="gitem"><img src="assets/card-5.jpeg" alt="Tarjetas NFCÉLITE en uso"></div>
+ </div>
+</section>
 
-    <span>Sin aplicaciones</span>
-    <span>Experiencia premium</span>
-    <span>Programación NFC</span>
-    <span>Entrega CDMX</span>
-    <span>Envíos nacionales</span>
+<section class="section container" id="paquetes">
+ <div class="sectionHead"><h2>Empieza con un<br><span class="gradient">paquete.</span></h2><p>Precios orientados a dos perfiles: negocios que quieren usar las tarjetas y emprendedores que quieren comenzar a ofrecerlas a otros negocios.</p></div>
+ <div class="pricing">
+  <article class="priceCard"><h3>Business</h3><div class="price">$300 <small>MXN</small></div><p class="desc">Entrada para un negocio.</p><ul><li>1 tarjeta NFC</li><li>Configuración inicial</li><li>Capacitación básica</li></ul><button class="primary" onclick="addPackage('Business',1,300,'Configuración + capacitación básica')">Agregar al pedido</button></article>
+  <article class="priceCard featured"><span class="badge">Más elegido</span><h3>Growth</h3><div class="price">$650 <small>MXN</small></div><p class="desc">3 tarjetas para varios puntos o pequeños clientes.</p><ul><li>3 tarjetas NFC</li><li>Configuración</li><li>Capacitación básica</li></ul><button class="primary" onclick="addPackage('Growth',3,650,'Configuración + capacitación básica')">Agregar al pedido</button></article>
+  <article class="priceCard"><h3>Starter Pro</h3><div class="price">$950 <small>MXN</small></div><p class="desc">5 tarjetas para comenzar a vender.</p><ul><li>5 tarjetas NFC</li><li>Configuración</li><li>Capacitación para operación</li></ul><button class="primary" onclick="addPackage('Starter Pro',5,950,'Configuración + capacitación')">Agregar al pedido</button></article>
+  <article class="priceCard"><h3>Reseller 10</h3><div class="price">$1,700 <small>MXN</small></div><p class="desc">Inventario inicial para reventa.</p><ul><li>10 tarjetas NFC</li><li>Configuración</li><li>Capacitación comercial</li></ul><button class="primary" onclick="addPackage('Reseller 10',10,1700,'Capacitación comercial')">Agregar al pedido</button></article>
+  <article class="priceCard"><h3>Wholesale 25</h3><div class="price">$3,750 <small>MXN</small></div><p class="desc">Para comenzar con volumen.</p><ul><li>25 tarjetas NFC</li><li>Mejor costo unitario</li><li>Capacitación comercial</li></ul><button class="primary" onclick="addPackage('Wholesale 25',25,3750,'Capacitación comercial')">Agregar al pedido</button></article>
+  <article class="priceCard"><h3>Wholesale 50</h3><div class="price">$6,500 <small>MXN</small></div><p class="desc">Inventario para escalar.</p><ul><li>50 tarjetas NFC</li><li>Costo unitario preferencial</li><li>Capacitación comercial</li></ul><button class="primary" onclick="addPackage('Wholesale 50',50,6500,'Capacitación comercial')">Agregar al pedido</button></article>
+ </div>
+ <p class="note">Precios de referencia comerciales. La personalización especial y el envío pueden cotizarse por separado.</p>
+</section>
 
+<section class="section container" id="proveedor">
+ <div class="sectionHead"><h2>No solo las vendas.<br><span class="gradient">Construye un sistema.</span></h2><p>NFCÉLITE puede funcionar como producto para tu propio negocio o como inventario para crear una línea de reventa.</p></div>
+ <div class="provider">
+  <div class="providerBox">
+   <h3>Para el negocio</h3><p>Una solución física y sencilla para colocar en el punto donde atiendes clientes.</p>
+   <div class="providerList">
+    <div><i class="dot"></i><span>Tarjeta configurada para el enlace elegido.</span></div>
+    <div><i class="dot"></i><span>Capacitación según la modalidad contratada.</span></div>
+    <div><i class="dot"></i><span>Entrega personal en CDMX o envío nacional.</span></div>
+   </div>
+  </div>
+  <div class="providerBox">
+   <h3>Para el emprendedor</h3><p>Compra varias unidades, define tu precio de venta y ofrece el producto a barberías, restaurantes, cafeterías, consultorios, tiendas y otros comercios.</p>
+   <div class="providerList">
+    <div><i class="dot"></i><span>Precio por volumen desde 3 unidades.</span></div>
+    <div><i class="dot"></i><span>Capacitación comercial opcional.</span></div>
+    <div><i class="dot"></i><span>Puedes definir tu propio precio de reventa.</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section container">
+ <div class="sectionHead"><h2>Tu ruta<br>para empezar.</h2><p>Un proceso pensado para que no tengas que improvisar al momento de vender.</p></div>
+ <div class="steps">
+  <div class="step"><b>01</b><h3>Elige</h3><p>Compra un paquete o arma uno personalizado.</p></div>
+  <div class="step"><b>02</b><h3>Aprende</h3><p>Recibe capacitación según la modalidad seleccionada.</p></div>
+  <div class="step"><b>03</b><h3>Ofrece</h3><p>Presenta las tarjetas a negocios de tu zona.</p></div>
+  <div class="step"><b>04</b><h3>Escala</h3><p>Reinvierte tus ventas en inventario de mayor volumen.</p></div>
+ </div>
+</section>
+
+<section class="section container" id="cotizador">
+ <div class="sectionHead"><h2>Arma tu<br><span class="gradient">propio paquete.</span></h2><p>La cotización cambia automáticamente según cantidad, capacitación y entrega. También puedes ver cuánto te costaría el inventario y cuánto ingresarías si defines un precio de reventa.</p></div>
+ <div class="builder">
+  <div class="builderGrid">
+   <div>
+    <div class="field"><label>Cantidad de tarjetas</label><div class="rangeRow"><input id="qty" type="range" min="1" max="100" value="10" oninput="updateQuote()"><div class="qtyBox"><span id="qtyVal">10</span></div></div><div class="tierHint" id="tierHint"></div></div>
+    <div class="field"><label>Capacitación</label><select id="training" onchange="updateQuote()">
+      <option value="included">Básica incluida — $0</option>
+      <option value="live">Personalizada en vivo — +$250</option>
+      <option value="commercial">Comercial para reventa — +$400</option>
+    </select></div>
+    <div class="field"><label>Entrega</label><select id="delivery" onchange="updateQuote()">
+      <option value="personal">Entrega personal — CDMX / $0 estimado</option>
+      <option value="national">Envío nacional estándar / $150–$250 estimado</option>
+      <option value="international">Envío internacional / desde $450 estimado</option>
+    </select></div>
+    <div class="field"><label>Precio de reventa por tarjeta (opcional)</label><input id="resale" type="number" min="0" placeholder="Ej. 450" oninput="updateQuote()"></div>
+   </div>
+   <div class="quoteBox">
+    <div class="quoteLine"><span>Tarjetas</span><strong id="qCards">$1,700 MXN</strong></div>
+    <div class="quoteLine"><span>Capacitación</span><strong id="qTraining">$0 MXN</strong></div>
+    <div class="quoteLine"><span>Entrega estimada</span><strong id="qShipping">$0 MXN</strong></div>
+    <div class="quoteTotal"><span>Total estimado</span><span id="qTotal">$1,700 MXN</span></div>
+    <div class="quoteLine" id="revenueLine" style="display:none"><span>Ingreso por reventa</span><strong id="qRevenue">$0 MXN</strong></div>
+    <div class="quoteLine" id="profitLine" style="display:none"><span>Margen bruto estimado</span><strong class="quoteGreen" id="qProfit">$0 MXN</strong></div>
+    <p class="note">Los costos de envío son estimativos. El monto final se confirma con destino, código postal, peso, cobertura y paquetería disponible.</p>
+    <button class="primary" style="width:100%;margin-top:17px" onclick="addCustom()">Agregar cotización al pedido</button>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section container">
+ <div class="sectionHead"><h2>Entrega<br>en movimiento.</h2><p>El sistema te permite indicar desde el inicio dónde quieres recibirlas. La cotización final se confirma por WhatsApp.</p></div>
+ <div class="deliveryGrid">
+  <article class="infoCard"><div class="num">CDMX</div><h3>Entrega personal</h3><p>Coordinamos zona, fecha y horario por WhatsApp. Ideal para pedidos locales.</p></article>
+  <article class="infoCard"><div class="num">NACIONAL</div><h3>Paqueterías</h3><p>Podemos cotizar con Estafeta, DHL, FedEx, Redpack, Paquetexpress o Correos de México.</p></article>
+  <article class="infoCard"><div class="num">INTERNACIONAL</div><h3>Otros países</h3><p>Se cotiza según país, código postal, peso y cobertura. Los impuestos de importación, si aplican, corresponden al comprador.</p></article>
+ </div>
+</section>
+
+<section class="section container" id="pedido">
+ <div class="sectionHead"><h2>Datos de pedido.<br><span class="gradient">Una sola vez.</span></h2><p>Cuando envíes la solicitud, WhatsApp abrirá un mensaje estructurado con tu pedido, destino, capacitación y método de pago.</p></div>
+ <div class="checkout">
+  <div class="countryBanner"><span>País seleccionado: <strong id="selectedCountry">México</strong></span><button onclick="openCountry()">Cambiar país</button></div>
+  <div class="checkoutGrid">
+   <div>
+    <div class="field"><label>Nombre / empresa *</label><input id="name" placeholder="Nombre o negocio"></div>
+    <div class="field"><label>WhatsApp de contacto *</label><input id="phone" placeholder="Ej. 55 1234 5678"></div>
+    <div id="mxFields">
+      <div class="field"><label>Estado *</label><select id="state">
+       <option>Ciudad de México</option><option>Estado de México</option><option>Jalisco</option><option>Nuevo León</option><option>Puebla</option><option>Querétaro</option><option>Guanajuato</option><option>Veracruz</option><option>Oaxaca</option><option>Yucatán</option><option>Otro estado</option>
+      </select></div>
+    </div>
+    <div class="field"><label>Ciudad / municipio *</label><input id="city" placeholder="Ciudad o municipio"></div>
+    <div class="field"><label>Código postal *</label><input id="zip" placeholder="C.P."></div>
+    <div class="field"><label>Dirección *</label><textarea id="address" rows="3" placeholder="Calle, número, colonia, referencias..."></textarea></div>
+    <div class="field"><label>Información adicional</label><textarea id="extra" rows="3" placeholder="Nombre del negocio, enlace de Google, personalización, horario, etc."></textarea></div>
+    <div class="field"><label>¿Cómo deseas pagar?</label>
+     <div class="payment">
+      <label class="payOption"><input type="radio" name="payment" value="Transferencia bancaria" checked> Transferencia</label>
+      <label class="payOption"><input type="radio" name="payment" value="Mercado Pago"> Mercado Pago</label>
+      <label class="payOption"><input type="radio" name="payment" value="PayPal"> PayPal</label>
+      <label class="payOption"><input type="radio" name="payment" value="OXXO"> OXXO</label>
+      <label class="payOption"><input type="radio" name="payment" value="Efectivo"> Efectivo</label>
+      <label class="payOption"><input type="radio" name="payment" value="Bitcoin"> Bitcoin</label>
+     </div>
+    </div>
+    <button class="primary" style="width:100%;padding:15px" onclick="sendWhatsApp()">Solicitar pedido por WhatsApp →</button>
+    <p class="note">El envío de esta solicitud no genera un cobro automático. Primero confirmamos disponibilidad, personalización, capacitación y costo final de entrega.</p>
+   </div>
+   <aside class="summary">
+    <div class="summaryHead"><h3>Resumen</h3><button class="summaryClear" onclick="clearCart()">Vaciar</button></div>
+    <div id="summaryItems"><p class="empty">Tu pedido está vacío.</p></div>
+    <div class="quoteTotal"><span>Total</span><span id="summaryTotal">$0 MXN</span></div>
+   </aside>
+  </div>
+ </div>
+</section>
+
+<section class="section container">
+ <div class="sectionHead"><h2>Preguntas<br>rápidas.</h2><p>Lo esencial antes de comenzar.</p></div>
+ <div class="faq">
+  <div class="faqItem"><button onclick="toggleFaq(this)">¿Necesito una aplicación para usar NFC? <span>+</span></button><div class="answer">No necesariamente. La lectura NFC depende del teléfono y del sistema operativo; el objetivo es que el dispositivo compatible lea la etiqueta y abra el enlace configurado.</div></div>
+  <div class="faqItem"><button onclick="toggleFaq(this)">¿Puedo revenderlas al precio que yo quiera? <span>+</span></button><div class="answer">Sí, tú puedes definir tu precio comercial. El cotizador te permite introducir un precio de reventa para estimar ingresos y margen bruto.</div></div>
+  <div class="faqItem"><button onclick="toggleFaq(this)">¿La entrega personal es solo en CDMX? <span>+</span></button><div class="answer">La opción personal está pensada para CDMX. Para otros estados y países se utiliza paquetería y se confirma el costo final antes del pago.</div></div>
+  <div class="faqItem"><button onclick="toggleFaq(this)">¿Qué pasa después de solicitar por WhatsApp? <span>+</span></button><div class="answer">Recibimos tu solicitud, confirmamos existencias, personalización, capacitación, paquetería y monto final. Después coordinamos el pago y la entrega.</div></div>
+ </div>
+</section>
+</main>
+
+<footer><div class="container footerIn"><div><strong>NFCÉLITE™️</strong><br>Tarjetas NFC para negocios y emprendedores.</div><div>WhatsApp: <span class="wa">+52 56 5209 2860</span><br>©️ 2026 NFCÉLITE™️</div></div></footer>
+
+<div class="toast" id="toast"></div>
+
+<div class="overlay" id="countryOverlay">
+ <div class="modal">
+  <div class="eyebrow">NFCÉLITE™️ / BIENVENIDO</div>
+  <h3>¿Desde dónde nos visitas?</h3>
+  <p>Selecciona tu país para adaptar la experiencia de entrega y atención.</p>
+  <div class="countryOptions">
+   <button class="countryOption" onclick="selectCountry('México')">🇲🇽 México</button>
+   <button class="countryOption" onclick="selectCountry('Estados Unidos')">🇺🇸 Estados Unidos</button>
+   <button class="countryOption" onclick="selectCountry('Canadá')">🇨🇦 Canadá</button>
+   <button class="countryOption" onclick="selectCountry('España')">🇪🇸 España</button>
+   <button class="countryOption" onclick="selectCountry('Colombia')">🇨🇴 Colombia</button>
+   <button class="countryOption" onclick="selectCountry('Argentina')">🇦🇷 Argentina</button>
+   <button class="countryOption" onclick="selectCountry('Chile')">🇨🇱 Chile</button>
+   <button class="countryOption" onclick="selectCountry('Otro país')">🌎 Otro país</button>
+  </div>
+  <button class="closeModal" onclick="closeCountry()">Continuar sin cambiar</button>
+ </div>
 </div>
 
-
-<!-- =======================================================
-     HOW IT WORKS
-======================================================= -->
-
-<section id="como">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <div class="eyebrow">
-                Tecnología
-            </div>
-
-            <h2>
-                Simple para tu cliente.
-                Poderoso para tu negocio.
-            </h2>
-
-            <p>
-                NFC permite que un dispositivo compatible interactúe
-                con la tarjeta acercándolo físicamente a ella.
-            </p>
-
-        </div>
-
-
-        <div class="how-grid">
-
-            <div class="how-card">
-
-                <div class="number">
-                    01 — TAP
-                </div>
-
-                <h3>
-                    Acerca el teléfono
-                </h3>
-
-                <p>
-                    El cliente acerca su smartphone a la tarjeta NFC.
-                </p>
-
-            </div>
-
-
-            <div class="how-card">
-
-                <div class="number">
-                    02 — LINK
-                </div>
-
-                <h3>
-                    Se abre el enlace
-                </h3>
-
-                <p>
-                    La tarjeta contiene un enlace programado,
-                    por ejemplo, el enlace de reseñas de Google.
-                </p>
-
-            </div>
-
-
-            <div class="how-card">
-
-                <div class="number">
-                    03 — REVIEW
-                </div>
-
-                <h3>
-                    El cliente califica
-                </h3>
-
-                <p>
-                    El cliente llega rápidamente al destino y
-                    puede dejar su opinión.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     PACKAGES
-======================================================= -->
-
-<section id="paquetes">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <div class="eyebrow">
-                Colección
-            </div>
-
-            <h2>
-                Elige cómo quieres empezar.
-            </h2>
-
-            <p>
-                Selecciona un paquete y agrégalo a tu carrito.
-                Puedes modificar las cantidades antes de finalizar.
-            </p>
-
-        </div>
-
-
-        <div class="package-grid">
-
-
-            <!-- 3 -->
-
-            <div class="package">
-
-                <h3>
-                    Starter
-                </h3>
-
-                <div class="price">
-                    $249
-                    <small>MXN</small>
-                </div>
-
-                <div class="package-description">
-                    Para comenzar a utilizar NFC.
-                </div>
-
-                <ul>
-
-                    <li>3 tarjetas NFC</li>
-                    <li>Programación inicial</li>
-                    <li>Enlace de Google Reviews</li>
-                    <li>Soporte inicial</li>
-
-                </ul>
-
-                <button
-                    class="btn btn-dark"
-                    onclick="addToCart('starter')">
-
-                    Agregar al carrito
-
-                </button>
-
-            </div>
-
-
-            <!-- 5 -->
-
-            <div class="package featured">
-
-                <div class="popular">
-                    MÁS VENDIDO
-                </div>
-
-                <h3>
-                    Business
-                </h3>
-
-                <div class="price">
-                    $349
-                    <small>MXN</small>
-                </div>
-
-                <div class="package-description">
-                    Para negocios que necesitan varias tarjetas.
-                </div>
-
-                <ul>
-
-                    <li>5 tarjetas NFC</li>
-                    <li>Programación inicial</li>
-                    <li>Google Reviews</li>
-                    <li>Soporte</li>
-
-                </ul>
-
-                <button
-                    class="btn btn-light"
-                    onclick="addToCart('business')">
-
-                    Agregar al carrito
-
-                </button>
-
-            </div>
-
-
-            <!-- 10 -->
-
-            <div class="package">
-
-                <h3>
-                    Pro
-                </h3>
-
-                <div class="price">
-                    $599
-                    <small>MXN</small>
-                </div>
-
-                <div class="package-description">
-                    Mayor cantidad y mejor precio por unidad.
-                </div>
-
-                <ul>
-
-                    <li>10 tarjetas NFC</li>
-                    <li>Programación inicial</li>
-                    <li>Google Reviews</li>
-                    <li>Soporte prioritario</li>
-
-                </ul>
-
-                <button
-                    class="btn btn-dark"
-                    onclick="addToCart('pro')">
-
-                    Agregar al carrito
-
-                </button>
-
-            </div>
-
-
-            <!-- 20 -->
-
-            <div class="package">
-
-                <h3>
-                    Distribuidor
-                </h3>
-
-                <div class="price">
-                    $999
-                    <small>MXN</small>
-                </div>
-
-                <div class="package-description">
-                    Para comenzar tu propio negocio de reventa.
-                </div>
-
-                <ul>
-
-                    <li>20 tarjetas NFC</li>
-                    <li>Precio especial</li>
-                    <li>Programación</li>
-                    <li>Soporte comercial</li>
-
-                </ul>
-
-                <button
-                    class="btn btn-dark"
-                    onclick="addToCart('distributor')">
-
-                    Agregar al carrito
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     RESELL
-======================================================= -->
-
-<section id="mayoreo">
-
-    <div class="container">
-
-        <div class="business-box">
-
-            <div>
-
-                <div class="eyebrow">
-                    Oportunidad
-                </div>
-
-                <h2>
-                    Convierte NFC en tu propio negocio.
-                </h2>
-
-                <p>
-                    Puedes adquirir tarjetas por volumen y venderlas
-                    posteriormente a restaurantes, barberías, hoteles,
-                    tiendas y otros negocios.
-                </p>
-
-                <button
-                    class="btn btn-light"
-                    onclick="addToCart('distributor')">
-
-                    Comenzar con mayoreo
-
-                </button>
-
-            </div>
-
-
-            <div class="resell-items">
-
-                <div class="resell-item">
-
-                    <strong>01</strong>
-
-                    <div>
-                        <b>Compra por volumen</b>
-                        <span>
-                            Reduce tu costo por tarjeta.
-                        </span>
-                    </div>
-
-                </div>
-
-
-                <div class="resell-item">
-
-                    <strong>02</strong>
-
-                    <div>
-                        <b>Define tu precio</b>
-                        <span>
-                            Establece tu propio margen.
-                        </span>
-                    </div>
-
-                </div>
-
-
-                <div class="resell-item">
-
-                    <strong>03</strong>
-
-                    <div>
-                        <b>Escala</b>
-                        <span>
-                            Solicita cotizaciones para cantidades mayores.
-                        </span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     CHECKOUT
-======================================================= -->
-
-<section id="checkout">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <div class="eyebrow">
-                Finalizar pedido
-            </div>
-
-            <h2>
-                Tu pedido, sin complicaciones.
-            </h2>
-
-            <p>
-                Introduce tus datos y genera automáticamente
-                tu solicitud por WhatsApp.
-            </p>
-
-        </div>
-
-
-        <div class="checkout">
-
-            <div class="form-grid">
-
-
-                <div class="field">
-
-                    <label>
-                        Nombre completo *
-                    </label>
-
-                    <input
-                        id="name"
-                        type="text"
-                        placeholder="Tu nombre">
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        País *
-                    </label>
-
-                    <select id="country">
-
-                        <option>México</option>
-                        <option>Estados Unidos</option>
-                        <option>Canadá</option>
-                        <option>España</option>
-                        <option>Colombia</option>
-                        <option>Argentina</option>
-                        <option>Chile</option>
-                        <option>Perú</option>
-                        <option>Otro</option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Estado / Provincia
-                    </label>
-
-                    <input
-                        id="state"
-                        type="text"
-                        placeholder="Ej. CDMX">
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Ciudad
-                    </label>
-
-                    <input
-                        id="city"
-                        type="text"
-                        placeholder="Tu ciudad">
-
-                </div>
-
-
-                <div class="field full">
-
-                    <label>
-                        Dirección
-                    </label>
-
-                    <input
-                        id="address"
-                        type="text"
-                        placeholder="Calle, número, colonia">
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Código postal
-                    </label>
-
-                    <input
-                        id="postal"
-                        type="text"
-                        placeholder="C.P.">
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Teléfono
-                    </label>
-
-                    <input
-                        id="phone"
-                        type="tel"
-                        placeholder="Tu teléfono">
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Tipo de entrega *
-                    </label>
-
-                    <select
-                        id="delivery"
-                        onchange="updateCheckout()">
-
-                        <option value="personal">
-                            Entrega personal CDMX
-                        </option>
-
-                        <option value="shipping">
-                            Envío por paquetería
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Paquetería
-                    </label>
-
-                    <select id="carrier">
-
-                        <option>DHL</option>
-                        <option>FedEx</option>
-                        <option>UPS</option>
-                        <option>Estafeta</option>
-                        <option>Correos de México</option>
-                        <option>La que recomienden</option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Método de pago *
-                    </label>
-
-                    <select id="payment">
-
-                        <option>
-                            Transferencia bancaria
-                        </option>
-
-                        <option>
-                            Mercado Pago
-                        </option>
-
-                        <option>
-                            PayPal
-                        </option>
-
-                        <option>
-                            OXXO
-                        </option>
-
-                        <option>
-                            Efectivo
-                        </option>
-
-                        <option>
-                            Bitcoin
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="field">
-
-                    <label>
-                        Nombre de tu negocio
-                    </label>
-
-                    <input
-                        id="business"
-                        type="text"
-                        placeholder="Opcional">
-
-                </div>
-
-
-                <div class="field full">
-
-                    <label>
-                        Información adicional
-                    </label>
-
-                    <textarea
-                        id="notes"
-                        placeholder="Ej. instrucciones de entrega, cantidad adicional, tipo de negocio, etc."></textarea>
-
-                </div>
-
-            </div>
-
-
-            <!-- SUMMARY -->
-
-            <div class="order-summary">
-
-                <div class="order-line">
-
-                    <span>
-                        Productos
-                    </span>
-
-                    <span id="summaryProducts">
-                        $0 MXN
-                    </span>
-
-                </div>
-
-
-                <div class="order-line">
-
-                    <span>
-                        Envío
-                    </span>
-
-                    <span id="summaryShipping">
-                        $0 MXN
-                    </span>
-
-                </div>
-
-
-                <div class="order-line total">
-
-                    <span>
-                        Total estimado
-                    </span>
-
-                    <strong id="summaryTotal">
-                        $0 MXN
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-            <br>
-
-
-            <button
-                class="btn btn-light"
-                style="width:100%"
-                onclick="sendWhatsApp()">
-
-                Confirmar pedido por WhatsApp →
-
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     CART
-======================================================= -->
-
-<div
-    class="cart-overlay"
-    id="cartOverlay"
-    onclick="closeCart(event)">
-
-    <aside
-        class="cart"
-        onclick="event.stopPropagation()">
-
-        <div class="cart-header">
-
-            <h3>
-                Tu carrito
-            </h3>
-
-            <button
-                class="close"
-                onclick="closeCart()">
-
-                ×
-
-            </button>
-
-        </div>
-
-
-        <div
-            class="cart-items"
-            id="cartItems">
-
-            <div class="cart-empty">
-
-                Tu carrito está vacío.
-
-                <br><br>
-
-                Elige un paquete para comenzar.
-
-            </div>
-
-        </div>
-
-
-        <div class="cart-summary">
-
-            <div class="cart-total">
-
-                <span>
-                    Subtotal
-                </span>
-
-                <strong id="cartTotal">
-                    $0
-                </strong>
-
-            </div>
-
-
-            <button
-                class="btn btn-light"
-                style="width:100%"
-                onclick="goCheckout()">
-
-                Continuar →
-
-            </button>
-
-        </div>
-
-    </aside>
-
+<div class="drawer" id="drawer">
+ <div class="drawerTop"><h3>Tu pedido</h3><button class="drawerClose" onclick="closeDrawer()">×</button></div>
+ <div class="drawerItems" id="drawerItems"><p class="empty">Tu pedido está vacío.</p></div>
+ <div class="drawerBottom">
+  <div class="quoteTotal"><span>Total</span><span id="drawerTotal">$0 MXN</span></div>
+  <button class="primary" style="width:100%;margin-top:15px" onclick="closeDrawer();scrollToId('pedido')">Continuar con los datos →</button>
+ </div>
 </div>
-
-
-<!-- =======================================================
-     FOOTER
-======================================================= -->
-
-<footer>
-
-    <div class="logo">
-        NFC<span>ÉLITE</span>
-    </div>
-
-    <p>
-        Tecnología NFC para negocios que quieren destacar.
-    </p>
-
-    <p>
-        © 2026 NFCÉLITE
-    </p>
-
-</footer>
-
-
-<!-- WHATSAPP -->
-
-<a
-    class="whatsapp"
-    href="https://wa.me/525652092860"
-    target="_blank"
-    aria-label="WhatsApp">
-
-    ✆
-
-</a>
-
 
 <script>
+const WA="525652092860";
+let cart=[];
+let currentCountry="México";
 
-/* =========================================================
-   CONFIGURACIÓN
-========================================================= */
+const trainingPrices={included:0,live:250,commercial:400};
+const shippingBase={personal:0,national:190,international:650};
 
-const WHATSAPP = "525652092860";
+function money(n){return "$"+Math.round(n).toLocaleString("es-MX")+" MXN"}
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2300)}
+function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:"smooth"})}
 
-
-/*
-   PRECIOS DE PRODUCTOS
-
-   Puedes cambiarlos aquí sin modificar
-   el resto de la página.
-*/
-
-const PRODUCTS = {
-
-    starter:{
-        name:"Starter",
-        cards:3,
-        price:249
-    },
-
-    business:{
-        name:"Business",
-        cards:5,
-        price:349
-    },
-
-    pro:{
-        name:"Pro",
-        cards:10,
-        price:599
-    },
-
-    distributor:{
-        name:"Distribuidor",
-        cards:20,
-        price:999
-    }
-
-};
-
-
-/*
-   ESTIMACIONES DE ENVÍO.
-
-   IMPORTANTE:
-   Son valores configurables, no cotizaciones
-   oficiales de las paqueterías.
-*/
-
-const SHIPPING_RATES = {
-
-    personal:0,
-
-    national:{
-
-        DHL:199,
-        FedEx:199,
-        UPS:209,
-        Estafeta:149,
-        "Correos de México":95,
-        "La que recomienden":149
-
-    }
-
-};
-
-
-/* =========================================================
-   CARRITO
-========================================================= */
-
-let cart = {};
-
-
-function addToCart(id){
-
-    if(!cart[id]){
-        cart[id] = 0;
-    }
-
-    cart[id]++;
-
-    saveCart();
-
-    renderCart();
-
-    openCart();
-
+function unitPrice(q){
+  if(q>=50)return 130;
+  if(q>=25)return 150;
+  if(q>=10)return 170;
+  if(q>=5)return 190;
+  if(q>=3)return 216.67;
+  return 300;
 }
-
-
-function removeFromCart(id){
-
-    delete cart[id];
-
-    saveCart();
-
-    renderCart();
-
+function tierText(q){
+  const u=unitPrice(q);
+  if(q===1)return "Precio unitario: $300 MXN";
+  if(q>=50)return "Nivel mayorista 50+ · $130 MXN por tarjeta";
+  if(q>=25)return "Nivel mayorista 25+ · $150 MXN por tarjeta";
+  if(q>=10)return "Nivel reventa 10+ · $170 MXN por tarjeta";
+  if(q>=5)return "Nivel 5+ · $190 MXN por tarjeta";
+  return "Nivel 3+ · $216.67 MXN por tarjeta";
 }
-
-
-function increase(id){
-
-    cart[id]++;
-
-    saveCart();
-
-    renderCart();
-
+function shippingEstimate(type){
+  if(type==="personal")return 0;
+  if(type==="national")return 190;
+  return 650;
 }
-
-
-function decrease(id){
-
-    cart[id]--;
-
-    if(cart[id] <= 0){
-        delete cart[id];
-    }
-
-    saveCart();
-
-    renderCart();
-
+function updateQuote(){
+  const q=+document.getElementById("qty").value;
+  const type=document.getElementById("delivery").value;
+  const training=document.getElementById("training").value;
+  const cards=q*unitPrice(q);
+  const tr=trainingPrices[training];
+  const ship=shippingEstimate(type);
+  const total=cards+tr+ship;
+  document.getElementById("qtyVal").textContent=q;
+  document.getElementById("tierHint").textContent=tierText(q);
+  document.getElementById("qCards").textContent=money(cards);
+  document.getElementById("qTraining").textContent=money(tr);
+  document.getElementById("qShipping").textContent=ship===0?money(0):"≈ "+money(ship);
+  document.getElementById("qTotal").textContent=money(total);
+  const resale=+document.getElementById("resale").value||0;
+  if(resale>0){
+    document.getElementById("revenueLine").style.display="flex";
+    document.getElementById("profitLine").style.display="flex";
+    document.getElementById("qRevenue").textContent=money(resale*q);
+    document.getElementById("qProfit").textContent=money(resale*q-total);
+  }else{
+    document.getElementById("revenueLine").style.display="none";
+    document.getElementById("profitLine").style.display="none";
+  }
+  return {q,cards,tr,ship,total};
 }
-
-
-function getSubtotal(){
-
-    let total = 0;
-
-    Object.keys(cart).forEach(id=>{
-
-        total +=
-            PRODUCTS[id].price *
-            cart[id];
-
-    });
-
-    return total;
-
+function addPackage(name,qty,total,detail){
+  cart.push({name,qty,total,detail});
+  renderCart();toast(name+" agregado al pedido");openDrawer();
 }
-
-
-function getItemsCount(){
-
-    let count = 0;
-
-    Object.values(cart).forEach(quantity=>{
-        count += quantity;
-    });
-
-    return count;
-
+function addCustom(){
+  const x=updateQuote();
+  const tr=document.getElementById("training").selectedOptions[0].text;
+  const de=document.getElementById("delivery").selectedOptions[0].text;
+  cart.push({name:"Paquete personalizado",qty:x.q,total:x.total,detail:tr+" · "+de});
+  renderCart();toast("Cotización agregada al pedido");openDrawer();
 }
-
-
-/* =========================================================
-   RENDER CARRITO
-========================================================= */
-
 function renderCart(){
-
-    const container =
-        document.getElementById("cartItems");
-
-    const count =
-        document.getElementById("cartCount");
-
-    const total =
-        document.getElementById("cartTotal");
-
-
-    count.innerText =
-        getItemsCount();
-
-
-    total.innerText =
-        "$" +
-        getSubtotal().toLocaleString("es-MX") +
-        " MXN";
-
-
-    if(Object.keys(cart).length === 0){
-
-        container.innerHTML = `
-
-            <div class="cart-empty">
-
-                Tu carrito está vacío.
-
-                <br><br>
-
-                Elige un paquete para comenzar.
-
-            </div>
-
-        `;
-
-        updateCheckout();
-
-        return;
-
-    }
-
-
-    container.innerHTML = "";
-
-
-    Object.keys(cart).forEach(id=>{
-
-        const product =
-            PRODUCTS[id];
-
-        const quantity =
-            cart[id];
-
-
-        container.innerHTML += `
-
-            <div class="cart-item">
-
-                <div>
-
-                    <div class="cart-item-name">
-                        ${product.name}
-                    </div>
-
-                    <div class="cart-item-price">
-
-                        ${product.cards} tarjetas ·
-
-                        $${product.price.toLocaleString("es-MX")} MXN
-
-                    </div>
-
-                    <br>
-
-                    <button
-                        class="close"
-                        style="width:auto;padding:0 10px"
-                        onclick="removeFromCart('${id}')">
-
-                        Eliminar
-
-                    </button>
-
-                </div>
-
-
-                <div class="quantity">
-
-                    <button
-                        onclick="decrease('${id}')">
-
-                        −
-
-                    </button>
-
-                    <span>
-                        ${quantity}
-                    </span>
-
-                    <button
-                        onclick="increase('${id}')">
-
-                        +
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        `;
-
-    });
-
-
-    updateCheckout();
-
+  const count=cart.reduce((a,b)=>a+b.qty,0);
+  document.getElementById("cartCount").textContent=count;
+  const total=cart.reduce((a,b)=>a+b.total,0);
+  document.getElementById("summaryTotal").textContent=money(total);
+  document.getElementById("drawerTotal").textContent=money(total);
+  const html=cart.length?cart.map((x,i)=>`
+   <div class="summaryItem">
+    <span><strong>${escapeHtml(x.name)}</strong><br><small>${x.qty} tarjeta(s) · ${escapeHtml(x.detail)}</small></span>
+    <span>${money(x.total)}<br><button class="remove" onclick="removeItem(${i})">Eliminar</button></span>
+   </div>`).join(""):'<p class="empty">Tu pedido está vacío.</p>';
+  document.getElementById("summaryItems").innerHTML=html;
+  document.getElementById("drawerItems").innerHTML=html;
 }
+function removeItem(i){cart.splice(i,1);renderCart();toast("Producto eliminado")}
+function clearCart(){cart=[];renderCart();toast("Pedido vaciado")}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
 
+function openDrawer(){document.getElementById("drawer").classList.add("open")}
+function closeDrawer(){document.getElementById("drawer").classList.remove("open")}
 
-/* =========================================================
-   CART OPEN / CLOSE
-========================================================= */
-
-function openCart(){
-
-    document
-        .getElementById("cartOverlay")
-        .classList.add("active");
-
+function openCountry(){document.getElementById("countryOverlay").classList.add("show")}
+function closeCountry(){document.getElementById("countryOverlay").classList.remove("show");document.body.classList.remove("lock")}
+function selectCountry(country){
+  currentCountry=country;
+  document.getElementById("selectedCountry").textContent=country;
+  document.getElementById("countryOverlay").classList.remove("show");
+  document.body.classList.remove("lock");
+  const mx=country==="México";
+  document.getElementById("mxFields").style.display=mx?"block":"none";
+  if(!mx){
+    document.getElementById("delivery").value="international";
+    updateQuote();
+  }
+  toast("País seleccionado: "+country);
 }
-
-
-function closeCart(event){
-
-    if(
-        event &&
-        event.target !==
-        document.getElementById("cartOverlay")
-    ){
-        return;
-    }
-
-    document
-        .getElementById("cartOverlay")
-        .classList.remove("active");
-
-}
-
-
-function goCheckout(){
-
-    closeCart();
-
-    document
-        .getElementById("checkout")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
-
-}
-
-
-/* =========================================================
-   CHECKOUT
-========================================================= */
-
-function getShipping(){
-
-    const delivery =
-        document.getElementById("delivery").value;
-
-
-    if(delivery === "personal"){
-        return 0;
-    }
-
-
-    const carrier =
-        document.getElementById("carrier").value;
-
-
-    return SHIPPING_RATES.national[carrier] || 149;
-
-}
-
-
-function updateCheckout(){
-
-    const subtotal =
-        getSubtotal();
-
-    const shipping =
-        getShipping();
-
-    const total =
-        subtotal + shipping;
-
-
-    document.getElementById(
-        "summaryProducts"
-    ).innerText =
-        "$" +
-        subtotal.toLocaleString("es-MX") +
-        " MXN";
-
-
-    document.getElementById(
-        "summaryShipping"
-    ).innerText =
-        "$" +
-        shipping.toLocaleString("es-MX") +
-        " MXN";
-
-
-    document.getElementById(
-        "summaryTotal"
-    ).innerText =
-        "$" +
-        total.toLocaleString("es-MX") +
-        " MXN";
-
-
-    const delivery =
-        document.getElementById("delivery").value;
-
-
-    document.getElementById("carrier").disabled =
-        delivery === "personal";
-
-}
-
-
-/* =========================================================
-   WHATSAPP
-========================================================= */
+function toggleFaq(btn){btn.parentElement.classList.toggle("open");btn.querySelector("span").textContent=btn.parentElement.classList.contains("open")?"−":"+"}
 
 function sendWhatsApp(){
+  if(!cart.length){toast("Agrega primero un paquete");scrollToId("paquetes");return}
+  const name=document.getElementById("name").value.trim();
+  const phone=document.getElementById("phone").value.trim();
+  const city=document.getElementById("city").value.trim();
+  const zip=document.getElementById("zip").value.trim();
+  const address=document.getElementById("address").value.trim();
+  const extra=document.getElementById("extra").value.trim();
+  const state=currentCountry==="México"?document.getElementById("state").value:"No aplica";
+  const payment=document.querySelector('input[name="payment"]:checked').value;
+  if(!name||!phone||!city||!zip||!address){toast("Completa los campos marcados con *");return}
+  const total=cart.reduce((a,b)=>a+b.total,0);
+  const items=cart.map(x=>`• ${x.name} — ${x.qty} tarjeta(s) — ${money(x.total)} — ${x.detail}`).join("\n");
+  const msg=`Hola NFCÉLITE 👋
 
-    if(Object.keys(cart).length === 0){
+Quiero solicitar una cotización/pedido.
 
-        alert(
-            "Tu carrito está vacío. Agrega un paquete primero."
-        );
+PEDIDO
+${items}
 
-        return;
+TOTAL ESTIMADO: ${money(total)}
 
-    }
+DATOS
+• Nombre / empresa: ${name}
+• WhatsApp: ${phone}
+• País: ${currentCountry}
+• Estado: ${state}
+• Ciudad / municipio: ${city}
+• C.P.: ${zip}
+• Dirección: ${address}
+• Método de pago: ${payment}
+• Información adicional: ${extra||"Ninguna"}
 
-
-    const name =
-        document.getElementById("name").value.trim();
-
-
-    if(!name){
-
-        alert(
-            "Escribe tu nombre para continuar."
-        );
-
-        document
-            .getElementById("name")
-            .focus();
-
-        return;
-
-    }
-
-
-    const country =
-        document.getElementById("country").value;
-
-    const state =
-        document.getElementById("state").value;
-
-    const city =
-        document.getElementById("city").value;
-
-    const address =
-        document.getElementById("address").value;
-
-    const postal =
-        document.getElementById("postal").value;
-
-    const phone =
-        document.getElementById("phone").value;
-
-    const delivery =
-        document.getElementById("delivery").value;
-
-    const carrier =
-        document.getElementById("carrier").value;
-
-    const payment =
-        document.getElementById("payment").value;
-
-    const business =
-        document.getElementById("business").value;
-
-    const notes =
-        document.getElementById("notes").value;
-
-
-    let productsText = "";
-
-
-    Object.keys(cart).forEach(id=>{
-
-        const product =
-            PRODUCTS[id];
-
-        productsText +=
-            `• ${product.name} — ${cart[id]} paquete(s) — ${product.cards * cart[id]} tarjeta(s)\n`;
-
-    });
-
-
-    const subtotal =
-        getSubtotal();
-
-    const shipping =
-        getShipping();
-
-    const total =
-        subtotal + shipping;
-
-
-    const deliveryText =
-        delivery === "personal"
-        ? "Entrega personal en CDMX"
-        : `Envío por ${carrier}`;
-
-
-    const message =
-
-`Hola NFCÉLITE 👋
-
-Quiero realizar un pedido.
-
-━━━━━━━━━━━━━━━━
-📦 PEDIDO
-━━━━━━━━━━━━━━━━
-
-${productsText}
-
-Subtotal: $${subtotal.toLocaleString("es-MX")} MXN
-Envío: $${shipping.toLocaleString("es-MX")} MXN
-TOTAL ESTIMADO: $${total.toLocaleString("es-MX")} MXN
-
-━━━━━━━━━━━━━━━━
-👤 DATOS
-━━━━━━━━━━━━━━━━
-
-Nombre: ${name}
-País: ${country}
-Estado: ${state || "No especificado"}
-Ciudad: ${city || "No especificada"}
-Código postal: ${postal || "No especificado"}
-Teléfono: ${phone || "No especificado"}
-
-Negocio: ${business || "No especificado"}
-
-━━━━━━━━━━━━━━━━
-🚚 ENTREGA
-━━━━━━━━━━━━━━━━
-
-${deliveryText}
-
-Dirección:
-${address || "Pendiente de proporcionar"}
-
-━━━━━━━━━━━━━━━━
-💳 PAGO
-━━━━━━━━━━━━━━━━
-
-${payment}
-
-━━━━━━━━━━━━━━━━
-📝 INFORMACIÓN ADICIONAL
-━━━━━━━━━━━━━━━━
-
-${notes || "Sin información adicional"}
-
-Me gustaría confirmar disponibilidad, costo final de envío y continuar con el pedido.`;
-
-
-    const url =
-        "https://wa.me/" +
-        WHATSAPP +
-        "?text=" +
-        encodeURIComponent(message);
-
-
-    window.open(url,"_blank");
-
+Quiero confirmar disponibilidad, capacitación, personalización y costo final de envío antes de realizar el pago.`;
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,"_blank");
 }
 
+updateQuote();
+renderCart();
 
-/* =========================================================
-   COUNTRY
-========================================================= */
-
-function enterSite(){
-
-    const country =
-        document
-            .getElementById("countrySelect")
-            .value;
-
-
-    if(!country){
-
-        alert(
-            "Selecciona tu país para continuar."
-        );
-
-        return;
-
-    }
-
-
-    document
-        .getElementById("country")
-        .value = country;
-
-
-    localStorage.setItem(
-        "nfcCountry",
-        country
-    );
-
-
-    document
-        .getElementById("countryOverlay")
-        .classList.add("hidden");
-
+// Primera visita: mostrar selector de país. Se guarda la elección para no repetirlo.
+try{
+  if(!localStorage.getItem("nfcelite_country_seen")){
+    setTimeout(()=>{document.getElementById("countryOverlay").classList.add("show");document.body.classList.add("lock")},450);
+  }
+  const saved=localStorage.getItem("nfcelite_country");
+  if(saved){currentCountry=saved;document.getElementById("selectedCountry").textContent=saved}
+}catch(e){}
+const originalSelect=selectCountry;
+selectCountry=function(country){
+  try{localStorage.setItem("nfcelite_country_seen","1");localStorage.setItem("nfcelite_country",country)}catch(e){}
+  originalSelect(country);
 }
-
-
-document
-    .getElementById("countrySelect")
-    .addEventListener(
-        "change",
-        function(){
-
-            if(this.value){
-
-                localStorage.setItem(
-                    "nfcCountry",
-                    this.value
-                );
-
-            }
-
-        }
-    );
-
-
-/* =========================================================
-   LOCAL STORAGE
-========================================================= */
-
-function saveCart(){
-
-    localStorage.setItem(
-        "nfcCart",
-        JSON.stringify(cart)
-    );
-
-}
-
-
-function loadCart(){
-
-    try{
-
-        const saved =
-            localStorage.getItem("nfcCart");
-
-        if(saved){
-            cart = JSON.parse(saved);
-        }
-
-    }catch(e){
-
-        cart = {};
-
-    }
-
-}
-
-
-/* =========================================================
-   INITIALIZE
-========================================================= */
-
-window.addEventListener(
-    "DOMContentLoaded",
-    ()=>{
-
-        loadCart();
-
-        renderCart();
-
-        const savedCountry =
-            localStorage.getItem("nfcCountry");
-
-
-        if(savedCountry){
-
-            document
-                .getElementById("country")
-                .value =
-                savedCountry;
-
-            document
-                .getElementById("countryOverlay")
-                .classList.add("hidden");
-
-        }
-
-        updateCheckout();
-
-    }
-);
-
-
-/* Actualizar checkout cuando cambie la paquetería */
-
-document
-    .getElementById("carrier")
-    .addEventListener(
-        "change",
-        updateCheckout
-    );
-
 </script>
-
 </body>
 </html>
